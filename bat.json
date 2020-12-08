@@ -1,0 +1,629 @@
+{	
+
+	"Like as A.i": {
+		"prefix": "map",
+		"body": [
+		  "php Theming",
+		  "Wordpress Theming",
+		  "Wordpress Plugins",
+		  "Woocommerce Theming",
+		  "Drupal Theming",
+		  "Shopify Theme",
+		  "React js",
+		  "Express App",
+		],
+		"description": "Just AI experience"
+	},
+
+
+	/**										   **
+	*										    *
+	*										    *
+	*     		    PHP THEME MAP       		*
+	*										    *
+	*										    *
+	**										   **/
+
+
+	"Oop Php theme Guideline": {
+		"prefix": "php Theming",
+		"body": [
+			"[p]HP THEMING",
+			"mkdir inc , config",
+			" ",
+			"  CONFIGARATION",
+			"   dbconfig [config\\config.php]",
+			"   dbconnect [inc\\Database.php]",
+			"",
+			"  AUTHENTICATIONS",
+			"    authModel  [ models\\User.js]",
+			"    authControllers [controllers\\auth\\authControllers.js]",
+			"    authRoutes [routes\\auth\\authRoute.js]",
+			"",
+			"   VALIDATIONS",
+			"     signupValidator [ validator\\auth\\signupValidator.js ]",
+			"     loginValidator [ validator\\auth\\loginValidator.js ]",
+			"     validationErrorFormatter [ utils\\validationErrorFormatter.js]",
+			"",
+			"   SESSIONS",
+			"     sessionMiddlewares [ middleware\\sessionMiddlewares.js]",
+			"     setLocals [ middleware\\setLocals.js]",
+			"",
+			"  IMAGE_UPLOADING",
+			"    npm i multer",
+			"    imageUploader [ middleware\\uploaderMiddleware.js ]",
+			"    imageUploaderMiddlewareRequire",
+			"    imageUploaderMiddleware",
+		  ],
+		"description": "php Theming Guideline"
+	},
+
+
+
+	
+	/**										   **
+	*										    *
+	*										    *
+	*     		 WORDPRESS THEMING	      		*
+	*										    *
+	*										    *
+	**										   **/
+
+	"Wordpress Theming Guideline": {
+		"prefix": "Wordpress Theming",
+		"body": [
+		  "[w]ORDPRESS THEMING",
+		  "ENVIRONMENT",
+		  "  css [style.css]",
+		  "  getStylesheetInformation",
+		  "HTmL",
+		  " HEAD",
+		  "  headFull",
+		  "    lang",
+		  "    metaCharset",
+		  "    siteTitle",
+		  "    path",
+		  "    head",
+		  "    getHeader",
+		  "",
+		  " BODY",
+		  "    bodyClass",
+		  "  HEADER",
+		  "    siteUrl",
+		  "    getLogo",
+		  "    getLogoMobile",
+		  "  NAVBar",
+		  "    getNavMenu",
+		  "    getB4NavWalker",
+		  "",
+		  "  SEarchBar",
+		  "    searchForm",
+		  "    getSearchForm",
+		  "    searchKeywordShowing",
+		  "",
+		  "  POSTs",
+		  "    POSTs filter",
+		  "      havePostStart",
+		  "      havePostEnd",
+		  "    POSTs body",
+		  "      theTitle",
+		  "      theContent",
+		  "      theExcerpt",
+		  "      theAuthor",
+		  "      theDate",
+		  "      thePostThumbnail",
+		  "      customThePostThumbnail",
+		  "      thePermalink",
+		  "      theCategory",
+		  "      theTags",
+		  "",
+		  " TEMplaTe",
+		  "   templateName",
+		  "   getTemplatePart",
+		  "",
+		  " SIdeBAr",		  
+		  "   getSidebar",
+		  " WidgET",
+		  "   getWidget",
+		  " FOOter",
+		  "   footer",
+		  "   getFooter",
+		  "FUncTIONs",
+		  " TheMeSupport",
+		  "   addThemeSupport",
+		  " EnQueueS",
+		  "   enqueue",
+		  "EXTRA",
+		  "  -",
+		  "    Name",
+		  "    Version",
+		  "    Status",
+		  "    Title",
+		  "    Author",
+		  "    Author Name",
+		  "    Author URI",
+		  "    Description",
+		  "    Template",
+		  "    Stylesheet",
+		  "    Template Files",
+		  "    Stylesheet Files",
+		  "    Template Dir",
+		  "    Stylesheet Dir",
+		  "    Screenshot",
+		  "    Tags",
+		  "    Theme Root",
+		  "    Theme Root URI",
+		  "    Parent Theme",
+		  "   -",
+		  "",
+		],
+		"description": "Wordpress Theming Guideline"
+	},
+
+	/**
+	*
+	*		WORDPRESS Theme functions deTail information
+	*
+	*/
+
+	"Wordprss get navigation information": {
+		"prefix": "getNavMenuInfo",
+		"body": [
+			"getNavMenu",
+			"  theme_location  Id of register_nav_menu",
+			"  menu            Default provide <ul>",
+			"  menu_class      Adding class into <ul class='' ></ul> tag",
+			"  menu_id         Adding Id into <ul id='' ></ul> tag",
+			"  container       Wraper(parent) of ul. Default 'div'.",
+			"  container_class Adding class into container.",
+			"  container_id    Adding Id into container.",
+			"  before          Adding something before <a> like as <h2><a>.",
+			"  after           Adding something after </a> like as </a></h2>.",
+			"  link_before     Adding something before link_text(Home) like <span class=''>Home.",
+			"  link_after      Adding something after link_text(Home) like Home </span>.",
+			"  depth           Supporting dropdown menu level",
+			"  fallback_cb     If the menu doesn,t set , a callback function will fire.",
+			"  walker          new walker() Adding something into li and a tag. Like Bootsrap nav walker.",
+			"  Change active   class to current_menu_item in css file",
+
+		],
+		"description": "Wordprss get navigation information"
+	},
+
+	"Wordprss get search form detail information": {
+		"prefix": "searchFormInfo",
+		"body": [
+			"searchForm",
+			"  Standard     [searchform.php]  getSearchForm",
+			"  Non-standard [index.php]",
+		],
+		"description": "Wordprss get search form detail information"
+	},
+
+	"Wordprss date formats detail information": {
+		"prefix": "theDateInfo",
+		"body": [
+			"theDate",
+			"  l F j, Y “Monday January 11, 2017”",
+			"  D M j    “Wed Jan 9”",
+			"  Ymd      “20191231”",
+			"  Y        “Year(2017)”",
+			"  j        “date(11)”",
+			"  F        “month(January)”",
+			"  l        “Day(Monday)”",	],
+		"description": "Wordprss date formats detail information"
+	},
+
+	"Wordprss post thumbnails detail information": {
+		"prefix": "thePostThumbnailInfo",
+		"body": [
+			"thePostThumbnail",
+			"  hasPostThumbnail",
+			"  the_post_thumbnail_url(parameter)",
+			"  get_the_post_thumbnail()",
+			"   parameter",
+			"    custom_thumbnail_id (custom height x width max)",
+			"    thumbnail (default 150px x 150px max)",
+			"    medium resolution (default 300px x 300px max)",
+			"    medium_large Large resolution (default 768px x 0px max)",
+			"    large resolution (default 1024px x 1024px max)",
+			"    full image resolution (unmodified)",
+			"    array(100,100) resolutions (height:width) ",
+		],
+		"description": "Wordprss post thumbnails detail information"
+	},
+
+
+
+
+	/**										   **
+	*										    *
+	*										    *
+	*     		WORDPRESS PLUGINs	      		*
+	*										    *
+	*										    *
+	**										   **/	
+
+
+
+	"Wordprss PlUgIn Map": {
+		"prefix": "Wordpress Plugins",
+		"body": [
+			"[wp]WORDPRESS PLUGIN",
+			"  ENVIRONMENT",
+			"   init[any.php]",
+			"   activeTableCreate [Command://show create table table_name]",
+			"   deActiveTableDrop",
+			"   enqueueAdmin",
+			"   ",
+			"  MENU OPTIONS",
+			"   adminMenuInit",
+			"   ",
+			"   ",
+		],
+		"description": "Just AI experience"
+	},
+
+
+
+
+	/**										   **
+	*										    *
+	*										    *
+	*     		WOOCOMMERCE THEMING      		*
+	*										    *
+	*										    *
+	**										   **/
+
+
+	"Woocommerce Theme map": {
+		"prefix": "Woocommerce Theming guideline",
+		"body": [
+			"[woo]COMMERCE",
+			"  ENVIRONMENT",
+			"   support [after_theme_setup@functions.php]",
+			"    !templates  [rename@woocommerce]",
+			"    !wrapper-start [global/wrapper-start]",
+			"    !wrapper-end [global/wrapper-end]",
+			"  SHOP PAGE [archive-product.php]",
+			"   getSidebar",
+			"   removeBreadcrumb",
+			"    !breadcrumb [global/breadcrumb]",
+			"     !remove@$$wrap_before/$$wrap_after",
+			"   setBreadcrumb",
+			"   getBreadcrumb",
+			"   !pageTitle [function@woocommerce_page_title()]",
+			"     !false/comment@function@woocommerce_page_title()",
+			"   removeShowResult",
+			"   removeCatalogOrdering",
+			"   setCatalogOrdering",
+			"   removeShowResult",
+			"   shopcss [css/woocommerce.css]",
+			"   ",
+		],
+		"description": "Woocommerce Themeing guideline"
+	},
+
+
+
+	/**										   **
+	*										    *
+	*										    *
+	*     		    DRUPAL THEMING      		*
+	*										    *
+	*										    *
+	**										   **/
+
+	"DRUPAL THEMING GUIDE": {
+		"prefix": "Drupal Theming",
+		"body": [
+		"[d]RUPAL THEMING",
+		" ENVIRONMENT",
+		"   Init [themes\\custom\\endymion\\endymion.info.yml]",
+		"   RemoveCssDefault [endymion.info.yml]",
+		"   SetCssJs [themes\\custom\\endymion\\endymion.libraries.yml]",
+		"   GetCssJs [endymion.info.yml]",
+		"   !duplicate [core/modules/system/templates/page.html.twig]",
+		" DEBUG",
+		"   !twig debug[sites/default.services.yml]",
+		"    duplicate default.services.yml@services.yml",
+		"    linked settings.php@services.yml",
+		" HIERARCHY",
+		"   !duplicate [core/themes/stable/templates]",
+		"    html.html.twig",
+		"    off-canvas-page-wrapper.html.twig [templates/content/off-canvas-page-wrapper.html.twig]",
+		"    page.html.twig",
+		"    region.html.twig [templates/layout/region.html.twig]",
+		"    block--system-menu-block.html.twig[templates/block/block--system-menu-block.html.twig]",
+		"    menu.html.twig [templates/navigation/menu.html.twig]",
+		"  PAGES",
+		"   !NAVIGATION [templates/layout/page.html.twig]",
+		"  ",
+		" DUMMY",
+		"  Devel [https://www.drupal.org/project/devel]",
+		" ",
+		" CUSTOMIZE",
+		"   !cacheClear []",
+		"   !menuSet []",
+		"   !blockLayout [Structure/blockLayout]",
+		"    !demonstration",
+		"    !customBlock",
+		"   !contentType [Structure/ContentTypes]",
+		"     [Field||]",
+		"   !plugin [Extend]",
+		" DEV",
+		"   dSetBlockRegion [endymion.info.yml]",
+		" FIX",
+		],
+		"description": "Drupal Theming Guideline"
+	},
+
+
+	/**										   **
+	*										    *
+	*										    *
+	*     		   SHOPIFY THEMEING        		*
+	*										    *
+	*										    *
+	**										   **/
+
+	"Shopify Theme Development": {
+		"prefix": "Shopify Theme",
+		"body": [
+			"  ENVIRONMENT",
+			"   theme new --password=[your-password] --store=[your-store.myshopify.com] --name=[theme name]",
+			"   ",
+			"  MENU OPTIONS",
+			"   adminMenuInit",
+			"   ",
+			"   ",
+		],
+		"description": "Just AI experience"
+	},
+
+	/**										   **
+	*										    *
+	*										    *
+	*     		      WEBPACK           		*
+	*										    *
+	*										    *
+	**										   **/
+
+	"WebPack configuration": {
+		"prefix": "WebPack",
+		"body": [
+		  "[wpk]WEBPACK JS",
+		  " ENvironment",
+		  "   npm i -D webpack-cli webpack",
+		  "   Index[index.html]",
+		  "   Init[webpack.config.js]",
+		  "   Runner[package.json]",
+		  "   npm run build",
+		  "",
+		  "  loader",
+		  "    Bable",
+		  "     npm install -D babel-loader @babel/core @babel/preset-env webpack",
+		  "     BableLoader  [loader@webpack.config.js]",
+		  "    Css",
+		  "     npm i -D css-loader mini-css-extract-plugin",
+		  "     CssLoaderRequire",
+		  "     CssLoader",
+		  "     CssLoaderPlugin",
+		  "     CssInclude [src/scripts/index.js]",
+		],
+		"description": "Webpack Configuration"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     		   REACT JS MAP          		*
+*										    *
+*										    *
+**										   **/
+
+	"React Js Map": {
+		"prefix": "React js",
+		"body": [
+		  "[R]EACT JS",
+		  "npm install -i create-react-app",
+		  "npx create-react-app mY-app",
+		  "  CORE FEATURES",
+		  "   classComponents",
+		  "   functionalComponents",
+		  "   state",
+		  "   setState",
+		  "  STYLE",
+		  "   style",
+		  "   styleSet",
+		  "   styleGet",
+		  "   styleModuleImport",
+		  "   styleModuleGet",
+		  "  FORM",
+		  "   class",
+		  "yarn run eject",
+		],
+		"description": "Just AI experience"
+	},
+
+
+
+
+/**										   **
+*										    *
+*										    *
+*     		   REACT NATIVE          		*
+*										    *
+*										    *
+**										   **/
+
+
+
+	"React native Apps": {
+		"prefix": "react native",
+		"body": [
+		  "REACT[n]ATIVE",
+		  " ENVironment",
+		  "  npx react-native start",
+		  "  npx react-native run-android",
+		  " CORE",
+		  "  COMPONENTS",
+		  "   component",
+		  "   importNative",
+		  "   Dimensions",
+		  "  STATE",
+		  "   State",
+		  "   SetState",
+		  "  STYLE",
+		  "   dimensions",
+		  "   style",
+		  "   styleSet",
+		  "   styleGet",
+		  "  COMPONENTS",
+		  "   View",
+		  "   Text",
+		  "   Image",
+		  "   ScrollView",
+		  "   FlatList",
+		  "   TouchableOpacity",
+		  "   TextInput",
+		  " ",
+		  " ",
+		  " LIBRARY",
+		  " Redux",
+		  "   npm install ",
+		  "   RnReducer[reducer.js]",
+		  "   RnStore[store.js]",
+		  "   RnActionTypes[actionTypes.js]",
+		  "   RnActionCreators[actionCreators.js]",
+		  "   RnImportProvider[App.js]",
+		  "   RnImportStore[App.js]",
+		  "   RnProvider",
+		  " ",
+		],
+		"description": "Just AI experience"
+	},
+
+	
+/**										   **
+*										    *
+*										    *
+*     		   EXPRESS JS APP          		*
+*										    *
+*										    *
+**										   **/
+
+
+	"Express Js Map": {
+		"prefix": "express js",
+		"body": [
+		  "[e]XPRESS",
+		  " mkdir api , config , controllers , middleware , models , public , routes , utils , validator , views",
+		  " npm install -i express morgan nodemon ejs mongoose",
+		  "  app",
+		  "  CONFIGARATION",
+		  "    ",
+		  "  AUTHENTICATIONS",
+		  "    npm i express-validator bcrypt",
+		  "    AuthModel  [ models\\User.js]",
+		  "    AuthControllers [controllers\\auth\\authControllers.js]",
+		  "    AuthRoutes [routes\\auth\\authRoute.js]",
+		  "",
+		  "   VALIDATIONS",
+		  "     signupValidator [ validator\\auth\\signupValidator.js ]",
+		  "     loginValidator [ validator\\auth\\loginValidator.js ]",
+		  "     validationErrorFormatter [ utils\\validationErrorFormatter.js]",
+		  "",
+		  "   SESSIONS",
+		  "     sessionMiddlewares [ middleware\\sessionMiddlewares.js]",
+		  "     setLocals [ middleware\\setLocals.js]",
+		  "",
+		  "  IMAGE_UPLOADING",
+		  "    npm i multer",
+		  "    imageUploader [ middleware\\uploaderMiddleware.js ]",
+		  "    imageUploaderMiddlewareRequire",
+		  "    imageUploaderMiddleware",
+		],
+		"description": "Just AI experience"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*         GOOGLE CHROME EXTENSION          	*
+*										    *
+*										    *
+**										   **/
+
+
+	"Google chrome Extension guide": {
+		"prefix": "Google Chrome Extensions",
+		"body": [
+			"[c]HROME EXTENSION/[info]RMATION",
+			" MANIFEST",
+			"    manifestInit [manifest.json]",
+			"    !page_action/browser_action",
+			"    contentScript",
+			"    backgroundScript",
+			"     [persistent : false]",
+			"    urlOverrides",
+			"      newtab",
+			"      history",
+			"      bookmarks",
+			"    webAccessibleResources",
+			"    permissions",
+			" REACT",
+			"    npm install --save-dev @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli webpack-dev-server babel-loader css-loader style-loader html-webpack-plugin",
+			"    npm install react react-dom",
+			"    WebpackInit:CHROME[webpack.config.js]",
+			"    HtmlInit:Chrome:webpack[app/index.html]",
+			"    JsInit:Chrome:webpack[app/index.js]",
+			"    [app/index.css]",
+			"    [dist]",
+			"    set command[\"start\": \"webpack\"]",
+			"    run command[npm start]",
+			" APIs",
+			"    sendMessage [contentScript.js]",
+			"    onMessage",
+			"    alarm",
+			"    contextMenusCreate",
+			"        !permissions@contextMenus",
+			"    richNotifications",
+			"    onMessage",
+			"",
+		],
+		"description": "Google chrome Extensions guide"
+	},
+
+
+
+	/**										   **
+	*										    *
+	*										    *
+	*         		INFORMATION		          	*
+	*										    *
+	*										    *
+	**										   **/
+	"context menu create details ": {
+		"prefix": "contextMenusCreateINFO",
+		"body": [
+		  "contextMenusCreate",
+		  "  contextMenus Types",
+		  "   all, page, frame, selection,",
+		  "   link, editable, image, video,",
+		  "   audio, launcher, browser_action, page_action",
+		  "  ",
+		  "  Callback function's Params",
+		  "   context.menuItemId, context.parentMenuItemId, context.mediaType, ",
+		  "   context.linkUrl, context.pageUrl, context.srcUrl, context.selectionText",
+		],
+		"description": "context menu create details "
+	  }
+
+
+
+
+
+}

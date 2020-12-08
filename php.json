@@ -1,0 +1,1141 @@
+{
+
+/**										   **
+*										    *
+*										    *
+*     			Core php		 		    *
+*										    *
+*										    *
+**										   **/
+
+
+	"php blank syntax": {
+		"prefix": "php",
+		"body": [
+		  "?>",
+		  " ",
+		  "<?php"
+		],
+		"description": "php blank syntax"
+	},
+
+
+
+
+/**										   **
+*										    *
+*										    *
+*     		Object oriented Php	 		    *
+*										    *
+*										    *
+**										   **/
+
+
+
+	"Object oriented programming class": {
+		"prefix": "_class",
+		"body": [
+		"class $name {",
+		"",
+		"     private $;",
+		"     public function __construct()",
+		"      {",
+		"          ",
+		"       }",	
+		"     public function $fname()",
+		"      {",
+		"          ",
+		"       }",	
+		"}"
+		],
+		"description": "Object oriented programming  class"
+	},
+	"Object oriented programming extends class": {
+		"prefix": "c:extends",
+		"body": [
+		"class $class_name extends $parent {",
+		"",
+		"}"
+		],
+		"description": "Object oriented programming extends class"
+	},
+	"Oop class object": {
+		"prefix": "_new",
+		"body": [
+		  "$$obj = new ();"
+		],
+		"description": "Oop class object"
+	},
+
+	"abstract class for inheritance": {
+		"prefix": "c:abstract",
+		"body": [
+		  "abstract class $name {",
+		  "",
+		  "}",
+		  "class class_name extends $name {",
+		  "",
+		  "}",
+		  "//it has no object and can't be created an object",
+		  "//it is crated specially for inheritance"
+		],
+		"description": "abstract class for inheritance"
+	},
+
+	"Object oriented programming normal function": {
+		"prefix": "_function:normal",
+		"body": [
+		  "function $name(){",
+		  "      ",
+		  "}"
+		],
+		"description": "Object oriented programming normal function"
+	},
+	"Object oriented programming public function": {
+		"prefix": "_function:public",
+		"body": [
+		  "public function $name(){",
+		  "      ",
+		  "}"
+		],
+		"description": "Object oriented programming public function"
+	},
+
+	"Constructor function ": {
+		"prefix": "__construct",
+		"body": [
+		  "public function __construct(){",
+		  "$start",
+		  "}"
+		],
+		"description": "Constructor function "
+	},
+
+	"Destructor function ": {
+		"prefix": "f:destruct",
+		"body": [
+		  "public function __destruct(){",
+		  "",
+		  "}"
+		],
+		"description": "Destructor function "
+	},
+
+	"Parents class constructed in child class": {
+		"prefix": "parent ::__construct();",
+		"body": [
+		  "function __construct() {",
+		  "    parent ::__construct( ",
+		  "           $necessary_code ",
+		  "    );",
+		  "}",
+		],
+		"description": "Parents class constructed in child class"
+	},
+
+	  "Get the all post by query": {
+		"prefix": "php@have_post",
+		"body": [
+		  "<?php",
+		  "$read = $db->select($query);",
+		  "if($read){  ",
+		  "    while($print=$read->fetch_assoc()){ ?>",
+		  "/*",
+		  "*  <?php echo $print['id'] ?>",
+		  "*/",
+		  "<?php",
+		  "   }",
+		  "}  ",
+		  "?>"
+		],
+		"description": "Get the all post by query"
+	  },
+	  
+/**										   **
+*										    *
+*										    *
+*     			MySqli Theme		 	    *
+*										    *
+*										    *
+**										   **/	  
+	  "Get the all data from table by table name": {
+		"prefix": "mysqli@select_all",
+		"body": [
+		  "\"select *from $table_name\";"
+		],
+		"description": "Get the all data from table by table name"
+	  },
+
+/**										   **
+*										    *
+*										    *
+*     			Wordpress Theme		 	    *
+*										    *
+*										    *
+**										   **/	
+
+
+
+
+/**
+*
+*			ENVIRONMENT SETup
+*
+*/
+
+
+	"wordpress stylesheet information": {
+		"prefix": "wGetStylesheetInformation",
+		"body": [
+		  "wp_get_theme()->get( 'Version' );",
+		],
+		"description": "wordpress stylesheet information"
+	},
+
+	"wordpress require file": {
+		"prefix": "wRequireFile",
+		"body": [
+		"require_once(get_template_directory().'/$inc/');"
+		],
+		"description": "wordpress require file"
+	},
+
+
+
+/**
+*
+*	Wordpress TheMeSupport
+*
+*/
+
+
+	"wp add theme support all functions": {
+		"prefix": "w@addthemesupport",
+		"body": [
+		"if ( ! function_exists( '$wp_theme_setup' ) ) :",
+		"",
+		"  function $wp_theme_setup() {",
+		"",
+		"    load_theme_textdomain( 'wp_car', get_template_directory() . '/languages' );",
+		"",
+		"    add_theme_support( 'automatic-feed-links' );",
+		"",
+		"    add_theme_support( 'title-tag' ); //Page title",
+		"",
+		"    add_theme_support('post-formats',array('video','audio','aside','gallery'));",
+		"",
+		"    add_theme_support('post-thumbnails' , array('post' , 'page' /*custom_post types name(id)*/));",
+		"",
+		"    set_post_thumbnail_size( 200, 200, true ); //for all post thumbnails ",
+		"    add_image_size( 'myThumb', 400, 400 ); //create new thumbnail size (thumbnail id,size(2))",
+		"",
+		"    register_nav_menus( array(",
+		"        'header-menu' => esc_html__( 'Header', 'text-domian' ),",
+		"        'footer-menu' => esc_html__( 'Footer', 'text-domian' ),",
+		"    ) );",
+		"",
+		"    add_theme_support( 'html5', array(",
+		"        'search-form',",
+		"        'comment-form',",
+		"        'comment-list',",
+		"        'gallery',",
+		"        'caption',",
+		"    ) );",
+		"",
+		"    add_theme_support( 'custom-background', apply_filters( 'wp_car_custom_background_args', array(",
+		"         'default-color' => 'ffffff',",
+		"         'default-image' => '',",
+		"    ) ) );",
+		"",
+		"    add_theme_support( 'customize-selective-refresh-widgets' );",
+		"",
+		"    add_theme_support( 'custom-logo', array(",
+		"          'height'      => 250,",
+		"          'width'       => 250,",
+		"          'flex-width'  => true,",
+		"          'flex-height' => true,",
+		"    ) );",
+		"  }",
+		"endif;",
+		"add_action( 'after_setup_theme', '$wp_theme_setup' );"
+		],
+		"description": "wp add theme support all functions"
+	},
+
+
+/**
+*
+*	Wordpress Mobile version logo setup in customizer
+*
+*/
+
+	"Wordpress theme mobile versin logo setup.": {
+		"prefix": "w@setmobilelogo",
+		"body": [
+		  "function mobile_version_logo_customizer_setting($$wp_customize) {",
+		  "    $$wp_customize->add_setting('mobile_version_logo');",
+		  "    $$wp_customize->add_control(new WP_Customize_Image_Control($$wp_customize, 'mobile_version_logo', array(",
+		  "        'label' => 'Mobile Devices Logo',",
+		  "        'section' => 'title_tagline',",
+		  "        'settings' => 'mobile_version_logo',",
+		  "        'priority' => 8 ",
+		  "    )));",
+		  "}",
+		  "add_action('customize_register', 'mobile_version_logo_customizer_setting');"
+		],
+		"description": "Wordpress theme mobile versin logo setup."
+	},
+
+/**
+*
+*	Wordpress EnQueueS
+*
+*/
+	"wp enqueue all style css|js|comments!": {
+		"prefix": "w@enqueue",
+		"body": [
+		"function wp_enqueue_method() {",
+		"  //for css",
+		"  wp_enqueue_style('core' , get_stylesheet_uri() , array() , wp_get_theme()->get( 'Version' ) );",
+		"  wp_enqueue_style('file_name' , get_template_directory_uri().'/  ') , array() , wp_get_theme()->get( 'Version' ) ;",
+		"  //for googleFonts cdn",
+		"  wp_enqueue_style('file_name' , 'link');",
+		"  //for js",
+		"  wp_register_script( 'jquery'); //default wordpress jquery",
+		"  wp_enqueue_script('customs' , get_template_directory_uri().'/js/clean-blog.min.js' , array('jquery') , 1.0 , true);",
+		"",
+		"  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {",
+		"    wp_enqueue_script( 'comment-reply' );",
+		"   }",
+		"}",
+		"add_action( 'wp_enqueue_scripts', 'wp_enqueue_method' );"
+		],
+		"description": "wp enqueue all style css|js|comments!"
+	},
+
+	"wordpress theme admin panel enqueue scripts": {
+		"prefix": "w@enqueueadmin",
+		"body": [
+		  "function admin_scripts(){",
+		  "      wp_enqueue_script('admin_custom', get_template_directory_uri().'/inc/admin_user_file.js', array('jquery'));",
+		  "      wp_enqueue_media();",
+		  "}",
+		  "add_action( 'admin_enqueue_scripts', 'admin_scripts' );"
+		],
+		"description": "wordpress theme admin panel enqueue scripts"
+	},
+
+
+/**
+*
+*	Wordpress NavMenu register
+*
+*/
+
+	"register nav menu": {
+		"prefix": "w@setnavmenu",
+		"body": [
+		  "function $nav_menu() {",
+		  "",
+		  "    if(function_exists('register_nav_menu')){",
+		  "        'header-menu' => esc_html__( 'Header', 'text-domian' ),",
+		  "        'footer-menu' => esc_html__( 'Footer', 'text-domian' ),",
+		  "    }",
+		  "}",
+		  "add_action( 'init', '$nav_menu' );"
+		],
+		"description": "register nav menu"
+	},
+
+	"wordpress active nav item color": {
+		"prefix": "w@activenavitem",
+		"body": [
+		  "add_filter('nav_menu_css_class' , 'active_nav_class' , 10 , 2);",
+		  "function active_nav_class ($classes, $item) {",
+		  "  if (in_array('current-menu-item', $classes) ){",
+		  "    $classes[] = 'active ';",
+		  "  }",
+		  "  return $classes;",
+		  "}"
+		],
+		"description": "wordpress active nav item color"
+	},
+/**
+*
+*	Wordpress Custom post register
+*
+*/
+
+	"wordpress post type": {
+		"prefix": "w@setcustompostype",
+		"body": [
+		"function d_post_type()",
+		"    {",
+		"        $$labels = array(",
+		"            'name'                  => __('$'),",
+		"            'singular_name'         => __('B'),",
+		"            'menu_name'             => __('$s'),",
+		"            'name_admin_bar'        => __('_'),",
+		"            'add_new'               => __('Add new'),",
+		"            'add_new_item'          => __('F'),",
+		"            'new_item'              => __('New $'),",
+		"            'edit_item'             => __('Edit $'),",
+		"            'view_item'             => __('View $'),",
+		"            'all_items'             => __('All $'),",
+		"            'search_items'          => __('Search $'),",
+		"            'parent_item_colon'     => __('L'),",
+		"            'not_found'             => __('$ not found'),",
+		"            'not_found_in_trash'    => __('$ not found trush'),",
+		"        );",
+		"",
+		"        $$args = array(",
+		"            'labels'                => $$labels,",
+		"            'public'                => true,",
+		"            'publicaly_queryable'   => true,",
+		"            'show_ui'               => true,",
+		"            'show_in_menu'          => true,",
+		"            'query_var'             => true,",
+		"            'rewrite'               => array( 'slug' => 'Slider' ),",
+		"            'capability_type'       => 'post',",
+		"            'has_archive'           => true,",
+		"            'Hierarchical'          => false,",
+		"            'menu_position'         => null,",
+		"            'menu_icon'             => 'dashicons-format-image',",
+		"            'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','hierarchical','trackbacks','custom-fields','revisions','page-attributes'),",
+		"            'taxonomies'            =>array('category'),",
+		"        );",
+		"",
+		"        register_post_type('Slider',$$args);   //it is main name of this post AnD args means all arguments",
+		"    }",
+		"add_action('init','d_post_type');",
+		"/*",
+	" 'singular_name' => __('B'),",
+	" 'menu_name'           =>  name in side_bar",
+	" 'name_admin_bar'      =>  name in admin_bar",
+	" 'add_new'             =>  second option in menu_bar",
+	"",
+	"",
+	"",
+	"*/"
+		],
+		"description": "wordpress post type"
+	},
+
+
+	"wordpress custom taxonomy": {
+		"prefix": "w@setcustomtaxonomy",
+		"body": [
+		"function slider_gallery_taxonomy() { ",
+		"    $$level = array(",
+		"        'hierarchical' => true, ",
+		"        'label' => 'Slider Category', //Display name ",
+		"        'query_var' => true, ",
+		"        'rewrite' => array(",
+		"        'slug' => 'slider-category', // This controls the base slug that will display before each term ",
+		"        'with_front' => true // Don't display the category base before",
+		"        )",
+		"    );",
+		"    register_taxonomy(",
+		"    'slider_cat', //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces). ",
+		"    'slider',     //First letter small letter always.....post type name(custom_post_type) ",
+		"     $$level",
+		"    );",
+		"}  ",
+		"add_action( 'init', 'slider_gallery_taxonomy');"
+		],
+		"description": "wordpress custom taxonomy"
+	},
+
+/**
+*
+*	Wordpress Widget development
+*
+*/
+	"wordpress widget registration": {
+		"prefix": "w@setcustomwidget",
+		"body": [
+		  "function wp_car_widgets(){",
+		  "  register_sidebar(array(",
+		  "    'name'          =>  esc_html__( 'Header widget', '@$&text_domain' ),",
+		  "    'id'            =>  esc_html__( 'head_widget', '@$&text_domain'),",
+		  "    'description'   =>  esc_html__('Description this Header Widget '),",
+		  "    'class' => '',",
+		  "    'before_widget' => '',",
+		  "    'after_widget'  => ' ',",
+		  "    'before_title'  => '',",
+		  "    'after_title'   => ' '",
+		  "  ));",
+		  "}",
+		  "add_action('widgets_init', 'wp_car_widgets');",
+		  "/*",
+		  "  Widget provide a head(h2 tag) and a body(ul tag) ",
+		  "  'name'          =>    Widget name appear in Admin panel ",
+		  "  'id'            =>    Widget showing by this Id",
+		  "  'description'   =>    Description of Widget appear in Dashboard Below the Widget name",
+		  "  'before_widget' =>    Rapper of full(Title and body) <div class=\"siderbar-widget\">",
+		  "  'after_widget'  =>    Rapper of full(Title and body) </div>",
+		  "  'before_title'  =>    Rapper of Title <h4 class=\"sidebar-widget-title\">",
+		  "  'after_title'   =>    Rapper of Title </h4>",
+		  "  ",
+		  "*/",
+		],
+		"description": "wordpress widget registration"
+	},
+
+
+	"wordpress widget developmnet guideline": {
+		"prefix": "wCustomWidgetDevelop",
+		"body": [
+		  "/**",
+		  " * Adds Foo_Widget widget.",
+		  " */",
+		  "class Foo_Widget extends WP_Widget {",
+		  "",
+		  " /**",
+		  "   * Register widget with WordPress.",
+		  "  */",
+		  "  function __construct() {",
+		  "    parent::__construct(",
+		  "        'foo_widget', // Base ID",
+		  "         esc_html__( 'Foo__ Widget Title', 'text_domain' ), // Widget Name",
+		  "        array( 'description' => esc_html__( 'A Foo Widget', 'text_domain' ), ) // Widget description below the widget name",
+		  "     );",
+		  " }",
+		  "",
+		  "",
+		  "",
+		  " /**",
+		  "  * Front-end display of widget.",
+		  "  *",
+		  "  * @see WP_Widget::widget()",
+		  "  *",
+		  "  * @param array $$args     Widget arguments.",
+		  "  * @param array $$instance Saved values from database.",
+		  "  */",
+		  " public function widget( $$args, $$instance ) {",
+		  "      echo $$args['before_widget'];",
+		  "      if ( ! empty( $$instance['title'] ) ) {",
+		  "          echo $$args['before_title'] . apply_filters( 'widget_title', $$instance['title'] ) . $$args['after_title'];",
+		  "      }",
+		  "      if ( ! empty( $$instance['description'] ) ) {",
+		  "          echo $$args['before_title'] . apply_filters( 'widget_title', $$instance['description'] ) . $$args['after_title'];",
+		  "      }",
+		  "      echo esc_html__( 'Hello, World!', 'text_domain' );",
+		  "      echo $$args['after_widget'];",
+		  " }",
+		  "",
+		  "",
+		  "  /**",
+		  "  * Back-end widget form.",
+		  "  *",
+		  "  * @see WP_Widget::form()",
+		  "  *",
+		  "  * @param array $$instance Previously saved values from database.",
+		  "  */",
+		  " public function form( $$instance ) {",
+		  "      $$title = ! empty( $$instance['title'] ) ? $$instance['title'] : esc_html__( 'New Blog title', 'text_domain' );",
+		  "      $$description = ! empty( $$instance['description'] ) ? $$instance['description'] : esc_html__( 'New Blog Description', 'text_domain' );",
+		  "      ?>",
+		  "      <p>",
+		  "      <label for=\"<?php echo esc_attr( $$this->get_field_id( 'title' ) ); ?>\"><?php esc_attr_e( 'Blog Title:', 'text_domain' ); ?></label> ",
+		  "      <input class=\"widefat\" id=\"<?php echo esc_attr( $$this->get_field_id( 'title' ) ); ?>\" name=\"<?php echo esc_attr( $$this->get_field_name( 'title' ) ); ?>\" type=\"text\" value=\"<?php echo esc_attr( $$title ); ?>\">",
+		  "      </p>",
+		  "  <!-- description -->",
+		  "    <p>",
+		  "      <label for=\"<?php echo esc_attr( $$this->get_field_id( 'description' ) ); ?>\"><?php esc_attr_e( 'Description:', 'text_domain' ); ?></label> ",
+		  "      <textarea class=\"widefat\" id=\"<?php echo esc_attr( $$this->get_field_id( 'description' ) ); ?>\" name=\"<?php echo esc_attr( $$this->get_field_name( 'description' ) ); ?>\"  ><?php echo esc_attr( $$description ); ?></textarea>",
+		  "     </p>",
+		  "",
+		  "     <?php ",
+		  " }",
+		  "",
+		  "",
+		  " /**",
+		  "  * Sanitize widget form values as they are saved.",
+		  "  *",
+		  "  * @see WP_Widget::update()",
+		  "  *",
+		  "  * @param array $$new_instance Values just sent to be saved.",
+		  "  * @param array $$old_instance Previously saved values from database.",
+		  "  *",
+		  "  * @return array Updated safe values to be saved.",
+		  "  */",
+		  " public function update( $$new_instance, $$old_instance ) {",
+		  "     $$instance = array();",
+		  "     $$instance['title'] = ( ! empty( $$new_instance['title'] ) ) ? sanitize_text_field( $$new_instance['title'] ) : '';",
+		  "     $$instance['description'] = ( ! empty( $$new_instance['description'] ) ) ? sanitize_text_field( $$new_instance['description'] ) : '';",
+		  "",
+		  "     return $$instance;",
+		  " }",
+		  "",
+		  "} // class Foo_Widget",
+		  "",
+		  "",
+		  "",
+		  "// register Foo_Widget widget",
+		  "function register_foo_widget() {",
+		  "  register_widget( 'Foo_Widget' );",
+		  "}",
+		  "add_action( 'widgets_init', 'register_foo_widget' );"
+		],
+		"description": "wordpress widget developmnet guideline"
+	},
+
+	  
+	"wordpress custom meta boxes register": {
+		"prefix": "wSetCustomMetaBox ",
+		"body": [
+		  "//post|page|custom_post_id|dashboard|",
+		  "function wp_register_meta_boxes() {",
+		  "    add_meta_box( 'meta-next-id', __( 'My Meta Box', 'textdomain' ), 'wpdocs_my_display_callback', 'post','normal','high' );   ",
+		  "}",
+		  "add_action( 'add_meta_boxes', 'wp_register_meta_boxes' );",
+		  "function wpdocs_my_display_callback(){ ?>",
+		  "<!-- This is a callback function and html code write here -->",
+		  "<?php }"
+		],
+		"description": "wordpress custom meta boxes register"
+	},
+	
+	"wordpress comment fields remove and position change": {
+		"prefix": "w@commentFormFieldsRemove",
+		"body": [
+		  "function prefix_move_comment_field_to_bottom( $$fields ) {",
+		  "    $$comment_field = $$fields['comment'];",
+		  "    unset( $$fields['comment'] );",
+		  "    $$fields['comment'] = $$comment_field;",
+		  "    return $$fields;",
+		  "}",
+		  "add_filter( 'comment_form_fields', 'prefix_move_comment_field_to_bottom', 10, 1 );"
+		],
+		"description": "wordpress comment fields remove and position change"
+	},
+
+	"Wordpress basic shortcode": {
+		"prefix": "wShortcodeBasic",
+		"body": [
+		  "function basic_shortcode($$atts , $$content = null){",
+		  "    return('<span style=\"background:red; color:green;\">'.$$content.'</span>');",
+		  "}",
+		  "add_shortcode('basic' , 'basic_shortcode'); ",
+		  "/*",
+		  " [shortcode] ... [/shortcode] //Here [shortcode] = [basic]",
+		  "*/"
+		],
+		"description": "Wordpress basic shortcode"
+	},
+
+	"wordpress signup all mechanism included here": {
+		"prefix": "wSignUp",
+		"body": [
+		  "global $$wpdb;",
+		  "if($$_POST){",
+		  "    $$username = $$wpdb->escape($$_POST['username']);",
+		  "    $$email = $$wpdb->escape($$_POST['email']);",
+		  "    $$password = $$wpdb->escape($$_POST['password']);",
+		  "    $$confirmPassword = $$wpdb->escape($$_POST['confirmPassword']);",
+		  "$$error = array();",
+		  "    if(strpos($$username , ' ')!== false){",
+		  "        $$error['username_space'] = \"Username has Space\";",
+		  "    }",
+		  "    if(empty($$username)){",
+		  "        $$error['username_empty'] = \"Needed Username Must\";",
+		  "    }",
+		  "    if(username_exists($$username)){",
+		  "        $$error['username_exists'] = \"Username already exists\";",
+		  "    }",
+		  "    if(!is_email($$email)){",
+		  "        $$error['email_valid'] = \"Email has no valid value .\";",
+		  "    }",
+		  "    if(email_exists($$email)){",
+		  "        $$error['email_exists'] = \"Email already exists\";",
+		  "    }",
+		  "    if(strcmp($$password , $$confirmPassword)!== 0){",
+		  "        $$error['password'] = \"Password didn't match\";",
+		  "    }",
+		  "    if(count($$error) == 0){",
+		  "        wp_create_user( $$username, $$password, $$email );",
+		  "        echo \"user created Sucessfully\";",
+		  "        exit();",
+		  "    }else{",
+		  "        print_r($$error); //print all error message",
+		  "    }",
+		  "",
+		  "}"
+		],
+		"description": "wordpress all signup mechanism included here"
+	  },
+
+
+
+
+/**										   **
+*										    *
+*										    *
+*     			Wordpress Plugin	 	    *
+*										    *
+*										    *
+**										   **/	
+
+	"wordpress PlUgin syntax applier": {
+		"prefix": "wp",
+		"body": [
+		"wp@",
+		],
+		"description": "wordpress PlUgin syntax applier"
+	},
+
+	"Plugins AcTivation Table Create": {
+		"prefix": "wp@activeTableCreate",
+		"body": [
+			"function pluginTable(){",
+			"        global $$wpdb;",
+			"        require_once(ABSPATH. 'wp-admin/includes/upgrade.php');   //for table creating",
+			"",
+			"        $$sql = \"CREATE TABLE `wp_custom_table` (",
+			"                `id` int(11) NOT NULL AUTO_INCREMENT,",
+			"                `name` varchar(255) NOT NULL,",
+			"                `email` varchar(255) NOT NULL,",
+			"                `add` varchar(255) NOT NULL,",
+			"                PRIMARY KEY (`id`)",
+			"               ) ENGINE=InnoDB DEFAULT CHARSET=latin1\";",
+			"",             
+			"             dbDelta( $$sql );",
+			"",         
+			"        $$page = array();",
+			"        $$page['post_type'] = 'post';",
+			"        $$page['post_title'] = 'Custom plugin page';",
+			"        $$page['post_status'] = 'publish';",
+			"        $$page['post_slug'] = 'custom-plugin';",
+			"",
+			"        wp_insert_post( $$page);",
+			"",
+			"}",
+			"",
+			"register_activation_hook( __FILE__ , 'pluginTable');"
+		],
+		"description": "Plugins AcTivation Table Create"
+	},
+
+
+	"Plugins DeacTivation Table Drop": {
+		"prefix": "wp@deActiveTableDrop",		
+		"body": [
+			"function pluginTabledelete(){",
+			"        global $$wpdb;",
+			"        $$wpdb->query(\"DROP table IF Exists wp_custom_table\");",
+			"",
+			"}",
+			"register_deactivation_hook( __FILE__ , 'pluginTabledelete');",
+			"register_uninstall_hook( __FILE__ , 'pluginTabledelete');"
+		],
+		"description": "Plugins DeacTivation Table Drop"
+	},
+
+
+	"wordpress Plugin admin panel enqueue scripts": {
+		"prefix": "wp@enqueueAdmin",
+		"body": [
+			"function $wp_enqueue_method() {",
+			"        wp_enqueue_style( 'style', PLUGINS_URL.'/custom/assets/css/style.css', '', '1.0');",
+			"        wp_enqueue_script( 'script', PLUGINS_URL.'/custom/assets/js/script.js', '', '1.0',false);",
+			"",
+			"        wp_localize_script('script2', 'ajaxurl', admin_url('admin-ajax.php'));",
+			"}",
+			"add_action( 'admin_enqueue_scripts', '$wp_enqueue_method' );"
+		],
+		"description": "wordpress Plugin admin panel enqueue scripts"
+	},
+
+
+	"wordpress admin menu option adding": {
+		"prefix": "wp@adminMenuInit",
+		"body": [
+		   "function add_custom_menu(){",
+		   "        add_menu_page(",
+		   "                'Testingplugin',",
+		   "                'Testing-plugin',",
+		   "                'manage_options',",
+		   "                'custom-plugin' ,",
+		   "                'custompluginfunc',",
+		   "                'dashicons-share-alt',",
+		   "                2",
+		   "        );",
+		   "        add_submenu_page( 'custom-plugin', 'all Pages', 'all Menu', 'manage_options', 'custom-plugin','custompluginfunc', 999);",
+		   "        add_submenu_page( 'custom-plugin', 'sub Page', 'sub Menu', 'manage_options', 'customnewpage','neutroniunsubmenu', 9);",
+		   "}",
+		   "",
+		   "add_action('admin_menu', 'add_custom_menu');",
+		   "",
+		   "",
+		   "function custompluginfunc(){", 
+		   "        include_once PLUGIN_DIR_PATH.'/views/front.php';",
+		   "}",
+		   "",
+		   "function neutroniunsubmenu(){",
+		   "        include_once PLUGIN_DIR_PATH.'/views/views.php';",
+		   "}",
+		],
+		"description": "wordpress admin menu option adding"
+	},
+	
+	"wordpress function hooking by add action": {
+		"prefix": "@w_f:add_action",
+		"body": [
+		  "function $name(){",
+		  "",
+		  "}",
+		  "add_action( '$tag', '$name', '10');"
+		],
+		"description": "wordpress function hooking by add action"
+	},
+
+	"wordpress function filtering by add filter": {
+		"prefix": "@w_f:add_filter",
+		"body": [
+		  "function $name(){",
+		  "",
+		  "}",
+		  "add_filter( '$tag', '$name');"
+		],
+		"description": "wordpress function hooking by add action"
+	},
+
+	"wordpress authors extra field adding(like facebook, twitter, linkedin)": {
+		"prefix": "w@filter_user_contactmethods",
+		"body": [
+		  "function user_extra_info($$methods){",
+		  "  $$methods['twitter'] = __('Twitter' , 'text_domain');   ",
+		  "  $$methods['linkedin'] = __('Linkedin' , 'text_domain');   ",
+		  "  $$methods['printerest'] = __('printerest' , 'text_domain');  ",
+		  "  return $$methods; ",
+		  "}",
+		  "add_filter( 'user_contactmethods', 'user_extra_info');"
+		],
+		"description": "wordpress authors extra field adding(like facebook, twitter, linkedin)"
+	},
+
+	"wordpress authors extra field adding by action(like facebook, twitter, linkedin)": {
+		"prefix": "w@userProfileFieldAdd",
+		"body": [
+		  "function show_extra_profile_fields($$user){ ?>",
+		  "  <h3>Extra profile information</h3>",
+		  "  <table class=\"form-table\">",
+		  "  <tr>",
+		  "      <th><label for=\"facebook\">Facebook</label></th>",
+		  "      <td>",
+		  "          <input type=\"text\" name=\"facebook\" id=\"facebook\" value=\"<?php echo esc_attr(get_the_author_meta('facebook' , $$user->ID));?>\" class=\"regular-text\"> <br>",
+		  "          <span class=\"description\">Please enter your facebook profile link . [e.g http:// www.facebook.com/ismail.alif]</span>",
+		  "      </td>",
+		  "  </tr>",
+		  "  <tr>",
+		  "      <th><label for=\"facebook\">Twitter</label></th>",
+		  "      <td>",
+		  "          <input type=\"text\" name=\"twitter\" id=\"twitter\" value=\"<?php echo esc_attr(get_the_author_meta('twitter' , $$user->ID));?>\" class=\"regular-text\"> <br>",
+		  "          <span class=\"description\">Please enter your twitter profile link . [e.g http:// www.twitter.com/ismail.alif]</span>",
+		  "      </td>",
+		  "  </tr>",
+		  "  <tr>",
+		  "      <th><label for=\"facebook\">Linkedin</label></th>",
+		  "      <td>",
+		  "          <input type=\"text\" name=\"linkedin\" id=\"linkedin\" value=\"<?php echo esc_attr(get_the_author_meta('linkedin' , $$user->ID));?>\" class=\"regular-text\"> <br>",
+		  "          <span class=\"description\">Please enter your linkedin profile link . [e.g http:// www.linkedin.com/ismail.alif]</span>",
+		  "      </td>",
+		  "  </tr>",
+		  "  ",
+		  "  </table>",
+		  "  <?php }",
+		  "add_action('show_user_profile', 'show_extra_profile_fields');",
+		  "function save_extra_profile_fields($$user_id){",
+		  "    if( !current_user_can('edit_user' , $$user_id))",
+		  "    return false;",
+		  "    update_user_meta( $$user_id, 'facebook', $$_POST['facebook']);",
+		  "    update_user_meta( $$user_id, 'twitter', $$_POST['twitter']);",
+		  "    update_user_meta( $$user_id, 'linkedin', $$_POST['linkedin']);",
+		  "}",
+		  "add_action('personal_options_update', 'save_extra_profile_fields');",
+		  "add_action('edit_user_profile_update', 'save_extra_profile_fields');"
+		],
+		"description": "wordpress authors extra field adding by action(like facebook, twitter, linkedin)"
+	},
+
+	"wordpress custom metabox fields register | save | update": {
+		"prefix": "w@customMetaBoxFields(save|update)",
+		"body": [
+		  "function slider_custom_meta(){",
+		  " add_meta_box( 'slider_meta', __('Others section' , 'carnews'), 'slider_meta_callback' ,'slider','normal','high' );   ",
+		  "}",
+		  "add_action('add_meta_boxes' , 'slider_custom_meta');",
+		  "//Field",
+		  "function slider_meta_callback($$post ) {",
+		  "    wp_nonce_field( basename( __FILE__ ), 'slider_nonce');",
+		  "     $$slider_stored_meta = get_post_meta( $$post->ID);",
+		  "?>",
+		  "",
+		  "",
+		  "<input type=\"text\" name=\"meta-subtitle-slider\" value=\"",
+		  "<?php if ( isset ($$slider_stored_meta['meta-subtitle-slider'] ) ){ echo $$slider_stored_meta['meta-subtitle-slider'][0]; }?>\" ",
+		  "style=\" width: 100%; font-size: 16px; margin-bottom:20px;\" placeholder=\"Enter Sub Title Here\">",
+		  "",
+		  "",
+		  "<input type=\"text\" name=\"meta-url-slider\" value=\"",
+		  "<?php if ( isset ($$slider_stored_meta['meta-url-slider'] ) ){ echo $$slider_stored_meta['meta-url-slider'][0]; }?>\" ",
+		  "style=\" width: 100%; font-size: 16px;\" placeholder=\"Enter Url name Here..\">",
+		  "",
+		  "",
+		  "<?php",
+		  "}",
+		  "//save field value ",
+		  "",
+		  "function slider_meta_save( $$post_id ){",
+		  " // Checks save status ",
+		  " $$is_autosave = wp_is_post_autosave( $$post_id );",
+		  " $$is_revision = wp_is_post_revision ($$post_id); ",
+		  " $$is_valid_nonce = ( isset($$_POST[ 'slider_nonce'] ) && wp_verify_nonce( $$_POST[ 'slider_nonce'], basename( __FILE__))) ? 'true': 'false';",
+		  "",
+		  " // Exits script depending on save status ",
+		  " if ( $$is_autosave || $$is_revision || !$$is_valid_nonce ) {",
+		  " return;",
+		  " }",
+		  " if(isset($$_POST['meta-subtitle-slider'])){",
+		  "    update_post_meta( $$post_id, 'meta-subtitle-slider', sanitize_text_field($$_POST['meta-subtitle-slider']));",
+		  "    }",
+		  " if(isset($$_POST['meta-url-slider'])){",
+		  "    update_post_meta( $$post_id, 'meta-url-slider', sanitize_text_field($$_POST['meta-url-slider']));",
+		  "    }",
+		  "}",
+		  "add_action('save_post' , 'slider_meta_save'); "
+		],
+		"description": "wordpress custom metabox fields register | save | update"
+	},
+
+	"Wordpress data validation": {
+		"prefix": "w@dataValidation",
+		"body": [
+		  "esc_html($$text)",
+		  "/*",
+		  " https://codex.wordpress.org/Data_Validation",
+		  "",
+		  " esc_html($$text)                             Using before text",
+		  " esc_url($$url, $protocols, $_context)        Using before url",
+		  " esc_js($$text)                               Using before javascript",
+		  " esc_attr($$text)                             Using into class <i> </i>    ",
+		  "",
+		  "*/"
+		],
+		"description": "Wordpress data validation"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     		Woocommerce theming 	 	    *
+*										    *
+*										    *
+**										   **/	
+
+	"woocommerce theme support": {
+		"prefix": "wooSupport",
+		"body": [
+		"add_theme_support( 'woocommerce' );"
+		],
+		"description": "woocommerce theme support"
+	},
+
+	"woocommerce get sidebar in shop page": {
+		"prefix": "wooGetSidebar",
+		"body": [
+		"/**",
+		" * Hook: woocommerce_sidebar.",
+		" *",
+		" * @hooked woocommerce_get_sidebar - 10",
+		" */",
+		"do_action( 'woocommerce_sidebar' );"
+		],
+		"description": "woocommerce get sidebar in shop page"
+	},
+
+	"Woocommerce Loop columns per pages": {
+		"prefix": "wooLoopPerPage",
+		"body": [
+		  "/**",
+		  "* Change number of products that are displayed per page (shop page)",
+		  "*/",
+		  "add_filter( 'loop_shop_columns', '$custom_loop_shop_columns', 20 );",
+		  "",
+		  "function $custom_loop_shop_columns( $$cols ) {",
+		  "  $$cols = 3;",
+		  "  return $$cols;",
+		  "}"
+		],
+		"description": "Woocommerce Loop columns per pages"
+	},
+
+	"woocommerce remove default breadcrumb": {
+		"prefix": "wooRemoveBreadcrumb",
+		"body": [
+		  "/**",
+		  "* Remove the default breadcrumbs ",
+		  "*/",
+		  "function $woo_remove_breadcurms(){",
+		  " remove_action('woocommerce_before_main_content','woocommerce_breadcrumb',20,0);",
+		  "}",
+		  "add_action('init','$woo_remove_breadcurms');"
+		],
+		"description": "woocommerce remove default breadcrumb"
+	},
+
+	"woocommerce set breadcrumbs all things": {
+		"prefix": "wooSetBreadcrumb",
+		"body": [
+		  "/**",
+		  "* change all things breadcrumbs",
+		  "*/",
+		  "",
+		  "function ecom_woocommerce_breadcrum(){",
+		  " return array(",
+		  "   'delimiter'  => '&#47;',",
+		  "   'wrap_before'  => '<div class=\"breadcrumb-inner\"><ul class=\"list-inline list-unstyled\">',",
+		  "   'wrap_after'  => '</ul></div>',",
+		  "   'before'  => ' ',",
+		  "   'after'  => ' ',",
+		  "   'home'  => _x('Home','breadcrum','woocommerce'),",
+		  " );",
+		  "}",
+		  "add_filter('woocommerce_breadcrumb_defaults','ecom_woocommerce_breadcrum');"
+		],
+		"description": "woocommerce set breadcrumbs all things"
+	},
+	
+	"woocommerce remove default show result": {
+		"prefix": "wooRemoveShowResult",
+		"body": [
+		  "/**",
+		  "* Remove show result remove",
+		  "*/",
+		  "function ecom_remove_show_result(){",
+		  "   remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );",
+		  "}",
+		  "add_action('init','ecom_remove_show_result');"
+		],
+		"description": "woocommerce remove default show result"
+	},
+
+	"woocommerce remove default catalog ordering": {
+		"prefix": "wooRemoveCatalogOrdering",
+		"body": [
+		  "/**",
+		  "* Remove catalog ordering remove",
+		  "*/",
+		  "function ecom_remove_ordering(){",
+		  "  remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );",
+		  "}",
+		  "add_action('init','ecom_remove_ordering');"
+		],
+		"description": "woocommerce remove default catalog ordering"
+	},
+	"woocommerce remove default pagination": {
+		"prefix": "wooRemovePagination",
+		"body": [
+		  "/**",
+		  "* Remove pagination",
+		  "*/",
+		  "function ecom_remove_paginatation(){",
+		  "  remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );",
+		  "}",
+		  "add_action('init','ecom_remove_paginatation');"
+		],
+		"description": "woocommerce remove default pagination"
+	},
+
+	"woocommerce custom pagination": {
+		"prefix": "wooSetPagination",
+		"body": [
+		  "/**",
+		  "* wordpress custom pagination",
+		  "*/",
+		  "function ecom_pagination(){",
+		  " global $$wp_query;",
+		  "",
+		  " if ( $$wp_query->max_num_pages <= 1 ) return; ",
+		  "",
+		  " $$big = 999999999; // need an unlikely integer",
+		  "",
+		  " $$pages = paginate_links( array(",
+		  "   'base'    => str_replace( $$big, '%#%', esc_url( get_pagenum_link( $$big ) ) ),",
+		  "   'format'  => '?paged=%#%',",
+		  "   'current' => max( 1, get_query_var('paged') ),",
+		  "   'total'   => $$wp_query->max_num_pages,",
+		  "   'type'    => 'array',",
+		  "   'prev_next' => true,",
+		  "   'prev_text' => __('<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>'),",
+		  "   'next_text' => __('<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>'),",
+		  "   ) );",
+		  "",
+		  " if( is_array( $$pages ) ) {",
+		  "    $$paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');",
+		  "    echo '<div class=\"pagination-container\"><ul class=\"list-inline list-unstyled\">';",
+		  "    foreach ( $$pages as $$page ) {",
+		  "         echo \"<li>$$page</li>\";",
+		  "    }",
+		  "    echo '</ul></div>';",
+		  "    }",
+		  "}"
+		],
+		"description": "woocommerce custom pagination"
+	},
+
+	
+
+	"woocommerce custom catalog ordering": {
+		"prefix": "wooSetCatalogOrdering",
+		"body": [
+		  "/**",
+		  "* woocommerce custom catalog ordering",
+		  "*/",
+		  "function ecom_custom_woocommerce_catalog_orderby( $$sortby ) {",
+		  "    $$sortby['random_list'] = 'position';",
+		  "    $$sortby['price-desc'] = 'Price:Lowest first';",
+		  "    $$sortby['price'] = 'Price:HIghest first';",
+		  "    $$sortby['menu_order'] = 'Product Name:A to Z';",
+		  "    unset($$sortby['popularity']);",
+		  "    unset($$sortby['rating']);",
+		  "    unset($$sortby['date']);",
+		  "    return $$sortby;",
+		  "}",
+		  "add_filter( 'woocommerce_catalog_orderby', 'ecom_custom_woocommerce_catalog_orderby' );"
+		],
+		"description": "woocommerce custom catalog ordering"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     				Laravel  	 	 	    *
+*										    *
+*										    *
+**										   **/	
+
+	"Laravel get route": {
+		"prefix": "Route::get",
+		"body": [
+		"Route::get('/', function () {",
+		"    return view('');",
+		"});"
+		],
+		"description": "Laravel get route"
+	},
+	
+	"Laravel group route": {
+		"prefix": "Route::prefix",
+		"body": [
+		  "Route::prefix('/auth')->group(function(){",
+		  "    ",
+		  "});"
+		],
+		"description": "Laravel group route"
+	}
+
+}

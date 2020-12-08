@@ -1,0 +1,79 @@
+{
+	"blank syntax of css": {
+		"prefix": ".",
+		"body": [
+		  ".$selector{ ",
+		  "",
+		  " }"
+		],
+		"description": "blank syntax of css"
+	  },
+
+/**										   **
+*										    *
+*										    *
+*     		  Wordpress theming 		    *
+*										    *
+*										    *
+**										   **/
+
+	"wp theme description": {
+		"prefix": "w@css",
+		"body": [
+			"/*",
+			"Theme Name: $name",
+			"Theme URI: https://",
+			"Author: ",
+			"Author URI: https://wordpress.org/",
+			"Description: $name brings your site to life with immersive featured images and subtle animations.",
+			"Version: 1.0",
+			"License: GNU General Public License v2 or later",
+			"License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+			"Text Domain: $name",
+			"Tags: one-column, two-columns",
+			"This theme, like WordPress, is licensed under the GPL.",
+			"Use it to make something cool, have fun, and share what you've learned with others.",
+			"*/"
+		],
+	"description": "wp theme description"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     		Woocommerce theming 		    *
+*										    *
+*										    *
+**										   **/	
+	"Woocommerce shop page add-to-cart section styles": {
+		"prefix": "woo@shopcss",
+		"body": [
+		"/**",
+		"*   add-to-cart section",
+		"*/",
+		".woocommerce ul.products li.product .button {",
+		"    margin-top: 0em !important;",
+		"    line-height: 18px;",
+		"    background: #108bea;",
+		"    color:#fff;",
+		"}",
+		".woocommerce ul.products li.product .button:hover {",
+		"    background: #fdd922;",
+		"    color: #000;",
+		"}",
+		".woocommerce a.added_to_cart {",
+		"    position: absolute;",
+		"    top: 0;",
+		"    left: 0;",
+		"    right: 0;",
+		"    bottom: 0;",
+		"    background: yellow;",
+		"}"
+		],
+		"description": "Woocommerce shop page add-to-cart section styles"
+	}
+
+
+
+}

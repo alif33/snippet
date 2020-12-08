@@ -1,0 +1,46 @@
+{
+	
+	"bidding map": {
+		"prefix": "map",
+		"body": [
+			"[start skill demo end]"
+		],
+		"description": "bidding map"
+	},
+	"bid start section One": {
+		"prefix": "startOne",
+		"body": [
+		  "I read your requirements and Understand Very well",
+		  "i am ready to start work from now."
+		],
+		"description": "bid start section One"
+	},
+
+	"php skill section for bidding": {
+		"prefix": "skillOne",
+		"body": [
+		  "I'm a professional Web developer with more than 6 Years of experience in PHP, laravel, Magento, Wordpress, and all types of designing work. I have very good Knowledge and clear understanding of online store websites.",
+		  "I have gone through your project description and I am fully confident and very much interested in this project as this is the area of my expertise.",
+		  "I am an expert in UI (Graphics Design) UX, GUI Designers, Web Developers:",
+		  "* Custom PHP, PHP Frameworks",
+		  "* CMS - Wordpress, Magneto, eCommerce",
+		  "* HTML5; CSS3;",
+		  "* Graphic Design(Logo,Flyer,Brochure,Advertisement,UI,T-shirt Design etc.)"
+		],
+		"description": "php skill section for bidding"
+	},
+
+	"wordpress demo website links": {
+		"prefix": "demoWordpress",
+		"body": [
+		  "https://gingershots.com/",
+		  "https://zaaf.com.au/",
+		  "https://fijiansoccer.com/",
+		  "http://jablador.com/",
+		  "http://mateseries.com/",
+		  "http://encuentrospoliticos.com/",
+		  "https://vintagetimber.com/"
+		],
+		"description": "wordpress demo website links"
+	}
+}

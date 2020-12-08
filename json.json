@@ -1,0 +1,140 @@
+{
+
+/**										   **
+*										    *
+*										    *
+*          Google Chrome Extension     		*
+*										    *
+*										    *
+**										   **/
+
+
+	"Google chrome extension manifest file": {
+		"prefix": "manifestInit",
+		"body": [
+		  " {",
+		  "    \"name\": \"$Extension_name\",",
+		  "    \"version\": \"1.0\",",
+		  "    \"description\": \"Build an Extension!\",",
+		  "    \"page_action\": {",
+		  "          \"default_popup\": \"popup.html\",",
+		  "          \"default_icon\": {",
+		  "            \"16\": \"img/icon.png\",",
+		  "            \"32\": \"img/icon.png\",",
+		  "            \"48\": \"img/icon.png\",",
+		  "            \"128\": \"img/icon.png\"",
+		  "          }",
+		  "      },",
+		  "    \"icons\": {",
+		  "         \"16\": \"img/icon.png\",",
+		  "         \"32\": \"img/icon.png\",",
+		  "         \"48\": \"img/icon.png\",",
+		  "         \"128\": \"img/icon.png\"",
+		  "     },",
+		  "    \"manifest_version\": 2",
+		  "  }"
+		],
+		"description": "Google chrome extension manifest file"
+	},
+	"Background or isolated environment": {
+		"prefix": "backgroundScript",
+		"body": [
+		  "\"background\": {",
+		  "    \"scripts\": [\"background.js\"]",
+		  "},"
+		],
+		"description": "Google chrome extension manifest file"
+	},
+	"Content User Script run on the user visited webpage": {
+		"prefix": "contentScript",
+		"body": [
+		  "\"content_scripts\": [",
+		  " {",
+		  "   \"matches\": [\"http://*/*\" , \"https://*/*\"],",
+		  "   \"css\": [\"myStyles.css\"],",
+		  "   \"js\": [\"contentScript.js\"]",
+		  " }",
+		  "],"
+		],
+		"description": "Content User Script run on the user visited webpage"
+	  },
+	"Permissions": {
+		"prefix": "permissions",
+		"body": [
+		  "\"permissions\": [",
+		  "  ",
+		  "],"
+		],
+		"description": "Content User Script run on the user visited webpage"
+	},
+	
+	"Google chrome extension Url overrides": {
+		"prefix": "urlOverrides",
+		"body": [
+		  "\"chrome_url_overrides\" : {",
+		  "    \"pageToOverride\": \"myPage.html\"",
+		  "},"
+		],
+		"description": "Google chrome extension Url overrides"
+	},
+	"google chrome extensios newtab url_overrides": {
+		"prefix": "newtab",
+		"body": [
+		  "\"newtab\": \"$page.html\""
+		],
+		"description": "google chrome extensios newtab url_overrides"
+	},
+	"google chrome extensios history url_overrides": {
+		"prefix": "history",
+		"body": [
+		  "\"history\": \"$page.html\""
+		],
+		"description": "google chrome extensios newtab url_overrides"
+	},
+	"google chrome extensios bookmarks url_overrides": {
+		"prefix": "bookmarks",
+		"body": [
+		  "\"bookmarks\": \"$page.html\""
+		],
+		"description": "google chrome extensios newtab url_overrides"
+	},
+
+	"google chrome extension web accessible resources": {
+		"prefix": "webAccessibleResources",
+		"body": [
+		  "  \"web_accessible_resources\": [",
+		  "    \"images/*.png\",",
+		  "    \"style/double-rainbow.css\",",
+		  "    \"script/double-rainbow.js\",",
+		  "    \"script/main.js\",",
+		  "    \"templates/*\"",
+		  "  ],"
+		],
+		"description": "google chrome extension web accessible resources"
+	},
+
+	"Google chrome content security policy.": {
+		"prefix": "contentSecurityPolicy",
+		"body": [
+		  "\"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\","
+		],
+		"description": "Google chrome content security policy."
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*          		   NODE JS 		    		*
+*										    *
+*										    *
+**										   **/
+
+	"Webpack run command": {
+		"prefix": "wpkRunner",
+		"body": [
+		  "\"build\": \"webpack\""
+		],
+		"description": "Webpack run command"
+	}
+}

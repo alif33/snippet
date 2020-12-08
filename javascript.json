@@ -1,0 +1,1490 @@
+{
+
+/**										   **
+*										    *
+*										    *
+*     			Core Javascript 		    *
+*										    *
+*										    *
+**										   **/
+
+	"js variable": {
+		"prefix": "var",
+		"body": [
+			"var  $name = ;"
+		],
+		"description": "for javascript variable syntax"
+	},
+
+	"js Es6 variable": {
+		"prefix": "let",
+		"body": [
+			"let  $name = ;"
+		],
+		"description": "for javascript variable syntax"
+	},
+
+	"javascript console for string.": {
+		"prefix": "log'",
+		"body": [
+		  "console.log( '$string' )"
+		],
+		"description": "javascript console ."
+	},
+
+	"Callback function in Es6": {
+		"prefix": "cb()",
+		"body": [
+		  "()=>{",
+		  "}"
+		],
+		"description": "Callback function in Es6"
+	},
+
+	"javascript console for variable.": {
+		"prefix": "log",
+		"body": [
+		  "console.log($val)"
+		],
+		"description": "javascript console ."
+	},
+
+	"javascript document write.": {
+		"prefix": "write",
+		"body": [
+			"document.write( '' );"
+		],
+		"description": "javascript document write."
+	},
+
+	"Basic function of javascript with console.log .": {
+		"prefix": "function",
+		"body": [
+		  "function(){",		  
+		  "$name",
+		  "}"
+		],
+		"description": "Basic function of javascript ."
+	},
+
+	"Basic function with parameter of javascript .": {
+		"prefix": "fp",
+		"body": [
+			"function(a , b){",
+			"return  ;",
+			"}"
+		],
+		"description": "Basic function of javascript ."
+	},
+
+	"Basic event of javascript": {
+		"prefix": ".addEventListener",
+		"body": [
+			".addEventListener(\"click\", function(e){",
+			"})",
+		],
+		"description": "Basic event of javascript."
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     				WebPack     		    *
+*										    *
+*										    *
+**										   **/
+
+
+
+	"Webpack configuration init": {
+		"prefix": "wpkInit",
+		"body": [
+		  "const path = require('path');",
+		  "",
+		  "module.exports = {",
+		  "  entry: './src/scripts/index.js',",
+		  "  output: {",
+		  "    path: path.resolve(__dirname, 'dist'),",
+		  "    filename: 'bundle.js'",
+		  "  },",
+		  "  mode: 'development',",
+		  "  module: {",
+		  "    rules: [",
+		  "  //loader",
+		  "    ]",
+		  "  },",
+		  "  plugins:[",
+		  "  //plugins",
+		  "  ]",
+		  "};"
+		],
+		"description": "Webpack configuration init"
+	},
+
+	"Webpack Bable module configure": {
+		"prefix": "wpkBableLoader",
+		"body": [
+		  "      {",
+		  "        test: /\\.js$/,",
+		  "        use: {",
+		  "          loader: 'babel-loader',",
+		  "          options: {",
+		  "            presets: ['@babel/preset-env'],",
+		  "            plugins: ['@babel/plugin-proposal-object-rest-spread']",
+		  "          }",
+		  "        }",
+		  "      }",
+		],
+		"description": "Webpack Bable module configure"
+	},
+
+	"Webpack Css Loader require": {
+		"prefix": "wpkCssLoaderRequire",
+		"body": [
+		  "const MiniCssExtractPlugin = require('mini-css-extract-plugin')"
+		],
+		"description": "Webpack Css Loader require"
+	},
+
+	"Webpack Css Loader configure": {
+		"prefix": "wpkCssLoader",
+		"body": [
+		  "{",
+		  "  test: /\\.css$/,",
+		  "  use: [MiniCssExtractPlugin.loader, 'css-loader'],",
+		  "}"
+		],
+		"description": "Webpack Css Loader configure"
+	},
+
+	"Webpack Css Loader plugin init": {
+		"prefix": "wpkCssLoaderPlugin",
+		"body": [
+		  "new MiniCssExtractPlugin({",
+		  "  filename:\"[name].css\",",
+		  "  chunkFilename:\"[id].css\"",
+		  "})     "
+		],
+		"description": "Webpack Css Loader plugin init"
+	},
+
+	"Webpack Css Include in JS": {
+		"prefix": "wpkCssInclude",
+		"body": [
+		  "import '../style/style.css'    "
+		],
+		"description": "Webpack Css Include in JS"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     				GULP	     		    *
+*										    *
+*										    *
+**										   **/
+
+
+
+
+/**										   **
+*										    *
+*										    *
+*     			JQuery Syntax   		    *
+*										    *
+*										    *
+**										   **/
+
+	"jQuery Ready identifier": {
+		"prefix": "jq",
+		"body": [
+		"jquery@",
+		],
+		"description": "Basic syntax of jquery . This is the best practice"
+	},
+
+	"Basic syntax of jquery . This is the best practice": {
+		"prefix": "jq@init",
+		"body": [
+		"$(document).ready(function(){",
+		" $start",
+		"});"
+		],
+		"description": "Basic syntax of jquery . This is the best practice"
+	},
+
+	"jquery css class all operation": {
+		"prefix": "q_css_class",
+		"body": [
+		  "$(\"trigger\").click(function(){  //addClass() + removeClass() = toggleClass() ",
+		  "    $(\"target\").toggleClass(\"blue\");",
+		  "  });",
+		  ""
+		],
+		"description": "jquery css class all operation"
+	},
+
+	"jquery css property included": {
+		"prefix": "q_css_style",
+		"body": [
+			"  $(\"trigger\").click(function(){",
+			"    $(\"target\").css(\"background-color\", \"yellow\");",
+			"  });"
+		],
+		"description": "jquery css property included"
+	},
+
+	"jquery siblings one buttons": {
+		"prefix": "q_siblings_active",
+		"body": [
+			"$(\"ul li a\").click(function(){ ",
+			"        //alternative method",
+			"        // $(\"ul li a\").removeClass(\"active\");",
+			"        // $(this).addClass(\"active\");",
+			"        $(this).addClass(\"active\").siblings().removeClass(\"active\");",
+			"    }); "
+		],
+		"description": "jquery siblings one buttons class active"
+	},
+
+
+
+
+/**										   **
+*										    *
+*										    *
+*     			Express Js      		    *
+*										    *
+*										    *
+**										   **/
+
+
+
+	"Express js Core file": {
+	"prefix": "eApp",
+	"body": [
+	  "require('dotenv').config()",
+	  "const express = require('express')",
+	  "const morgan = require('morgan')",
+	  "const mongoose = require('mongoose')",
+	  "const session  = require('express-session')",
+	  "const MongoDBStore = require('connect-mongodb-session')(session)",
+	  "const flash = require('connect-flash')",
+	  "const authRoute = require('./routes/auth/authRoute')",
+	  "const {bindUserWithRequest} = require('./middleware/sessionMiddlewares')",
+	  "const setLocals = require('./middleware/setLocals')",
+	  "const app = express()",
+	  "const MongoDB = `mongodb://localhost/marketplace`",
+	  "",
+	  "const store = new MongoDBStore({",
+	  "    uri: MongoDB,",
+	  "    collection: 'mySessions'",
+	  "    });",
+	  "",
+	  "app.set('view engine' , 'ejs')",
+	  "app.set('views' , 'views')",
+	  "",
+	  "app.use(express.static(__dirname + '/public'))",
+	  "app.use(express.urlencoded({ extended : true}))",
+	  "app.use(express.json())",
+	  "app.use(require('express-session')({",
+	  "    secret: 'This is a secret',",
+	  "    cookie: {",
+	  "        maxAge: 1000 * 60 * 60 * 24 * 7 ",
+	  "    },",
+	  "    store: store,",
+	  "    resave: false,",
+	  "    saveUninitialized: false",
+	  "    }),",
+	  "    bindUserWithRequest(),",
+	  "    setLocals(),",
+	  "    flash()",
+	  "    )",
+	  "",
+	  "/**",
+	  " *  Development Middleware",
+	  "*/",
+	  "",
+	  "if(app.get('env').toLowerCase()=== 'development'){",
+	  "    app.use(morgan('dev'))",
+	  "}",
+	  "",
+	  "app.use('/' , authRoute)",
+	  "",
+	  "",
+	  "app.get('/' , (req , res) =>{",
+	  "    res.render('home' , { title : 'Well come to our new shop'})",
+	  "})",
+	  "",
+	  "mongoose",
+	  "    .connect(MongoDB , {",
+	  "        useNewUrlParser: true,",
+	  "        useUnifiedTopology: true",
+	  "    })",
+	  "    .then(() =>{",
+	  "        app.listen(3000, () => {",
+	  "            console.log('App listening on port 3000!');",
+	  "        });",
+	  "    })",
+	  "    .catch( e => {",
+	  "        console.log(e);",
+	  "    })"
+	],
+	"description": "Express js Core file"
+  	},
+
+	"Express js authentication controllers": {
+		"prefix": "eAuthControllers",
+		"body": [
+		"const bcrypt = require('bcrypt')",
+		"const User = require('../../models/User')",
+		"const {validationResult} = require('express-validator')",
+		"const errorFormatter = require('../../utils/validationErrorFormatter')",
+		"",
+		"exports.signupGetController = async(req, res, next) => {",
+		"    res.render('auth/user/signup', { title : 'Create A New Account' , error : {}, value:{}})",
+		"}",
+		"",
+		"exports.signupPostController = async(req, res, next) => {",
+		"",
+		"    let {firstName, lastName, email, password, confirmPassword} = req.body",
+		"",
+		"/**",
+		"*         Validation apply",
+		"* ",
+		"*/",
+		"",
+		"    let errors = validationResult(req).formatWith(errorFormatter)",
+		"    if(!errors.isEmpty()){",
+		"        console.log(errors.mapped())",
+		"        return res.render('auth/user/signup' , {",
+		"            title : 'Create a New Account', ",
+		"            error : errors.mapped(),",
+		"            value :{",
+		"                firstName, lastName, email, password, confirmPassword",
+		"            }",
+		"        })",
+		"    }",
+		"",
+		"/**",
+		"*         Create user",
+		"* ",
+		"*/",
+		"    try {",
+		"        let hashedPassword = await bcrypt.hash(password, 11)",
+		"        let user = new User({",
+		"            firstName, ",
+		"            lastName, ",
+		"            email, ",
+		"            password : hashedPassword",
+		"        })",
+		"        let createUser = await user.save()",
+		"        console.log('User Created Successfully' ,createUser);",
+		"        res.render('auth/user/signup' , { title : 'Create A New Account', value:{}, error:{}})",
+		"    } catch (e){",
+		"            console.log(e)",
+		"    }   ",
+		"}",
+		"",
+		"exports.loginGetController = (req, res, next) => {",
+		"    console.log(req.session)",
+		"    res.render('auth/user/login' , { title : 'Create A New Account' , error : {}, errMessage: {}, value: {}})",
+		"}",
+		"",
+		"exports.loginPostController = async(req, res, next) => {",
+		"    let {email, password} = req.body",
+		"",
+		"    let errors = validationResult(req).formatWith(errorFormatter)",
+		"    if(!errors){",
+		"        return res.render('auth/user/login',{",
+		"            title : 'Login to Your Account',",
+		"            error : errors.mapped(),",
+		"            value : {",
+		"                email , password",
+		"            }",
+		"        })",
+		"    }",
+		"",
+		"/**",
+		"*         Authentication checking",
+		"* ",
+		"*/",
+		"",
+		"    try{",
+		"        let user = await User.findOne({email})",
+		"            if(!user){",
+		"                return res.render('auth/user/login', {errMessage:{ userName : 'Username not found !'} , error: {}, ",
+		"                value : {",
+		"                    email , password",
+		"                }})",
+		"            }",
+		"        let match = await bcrypt.compare(password, user.password)",
+		"            if(!match){",
+		"                    console.log()",
+		"                    return res.render('auth/user/login', {errMessage :{ password : 'Password incorrect !'} , error: {},",
+		"                    value : {",
+		"                        email , password",
+		"                    }})",
+		"            }",
+		"        req.session.IsLoggedIn = true",
+		"        req.session.user = user",
+		"        req.session.save( err => {",
+		"            if (err) {",
+		"                console.log(err)",
+		"                return next(err)",
+		"            }",
+		"            res.redirect('/dashboard')",
+		"        })",
+		"        ",
+		"    } catch (e){",
+		"        console.log(e)",
+		"        next(e)",
+		"    }",
+		"}",
+		"exports.logoutController = (req , res) => {",
+		"    req.session.destroy( err => {",
+		"        if(err) {",
+		"            console.log(err)",
+		"           return next(err)",
+		"        }",
+		"        return res.redirect('/auth/user/login')",
+		"    })",
+		"}",
+		""
+		],
+		"description": "Express js authentication controllers"
+	},
+	
+	"Express js authentication routes": {
+		"prefix": "eAuthRoutes",
+		"body": [
+		  "const route = require('express').Router()",
+		  "const signupValidator = require('../../validator/auth/signupValidator')",
+		  "const loginValidator = require('../../validator/auth/loginValidator')",
+		  "const {isUnAuthenticated} = require('../../middleware/sessionMiddlewares')",
+		  "",
+		  "const {signupGetController,",
+		  "       signupPostController,",
+		  "       loginGetController,",
+		  "       loginPostController,",
+		  "       logoutController} = require('../../controllers/auth/authControllers')",
+		  "",
+		  "route.get('/auth/user/signup',isUnAuthenticated , signupGetController)",
+		  "route.post('/auth/user/signup', isUnAuthenticated, signupValidator, signupPostController)",
+		  "route.get('/auth/user/login' , isUnAuthenticated, loginGetController)",
+		  "route.post('/auth/user/login', isUnAuthenticated, loginValidator, loginPostController)",
+		  "route.get('/auth/user/logout' , logoutController)",
+		  "",
+		  "module.exports = route"
+		],
+		"description": "Express js authentication routes"
+	},
+
+	"Express js signup all fields validation": {
+		"prefix": "eSignupValidator",
+		"body": [
+		  "const {body} = require('express-validator')",
+		  "const User  = require('../../models/User')",
+		  "",
+		  "module.exports = [",
+		  "    body('firstName')",
+		  "           .isLength({min : 2,max : 15}).withMessage('Username Must Be 2 to 15 Chars')",
+		  "           .trim(),",
+		  "    body('lastName')",
+		  "           .isLength({min : 2,max : 15}).withMessage('Username Must Be 2 to 15 Chars')",
+		  "           .trim(),",
+		  "    body('email')",
+		  "           .isEmail().withMessage('Please Provide A Valid Email')",
+		  "           .custom( async email =>{",
+		  "                  let user = await User.findOne({email})",
+		  "                  if(user){",
+		  "                         return Promise.reject('Email already Used')",
+		  "                  }",
+		  "           })",
+		  "           .normalizeEmail(),",
+		  "    body('password')",
+		  "           .isLength({min : 4})",
+		  "           .withMessage('Your pasword must be geeated than 5 Chars'),",
+		  "    body('confirmPassword')",
+		  "           .custom(( confirmPassword , {req}) =>{",
+		  "                  if(confirmPassword != req.body.password){",
+		  "                         throw new Error('Password does,t match !')",
+		  "                  }",
+		  "           return true",
+		  "           })",
+		  "]"
+		],
+		"description": "Express js signup all fields validation"
+	},
+
+	"Express js login all fields validation": {
+		"prefix": "eLoginValidator",
+		"body": [
+		  "const {body} = require('express-validator')",
+		  "module.exports = [",
+		  "    body('email')",
+		  "        .not().isEmpty().withMessage('Email can not be Empty'),",
+		  "    body('password')",
+		  "        .not().isEmpty().withMessage('Password can not be Empty')",
+		  "]"
+		],
+		"description": "Express js login all fields validation"
+	},
+
+	"Express js validator error formatter": {
+		"prefix": "eValidationErrorFormatter",
+		"body": [
+		  "module.exports = error  => error.msg"
+		],
+		"description": "Express js validator error formatter"
+	},
+
+	"Session checking from every request": {
+		"prefix": "eSessionMiddlewares",
+		"body": [
+		  "const User = require('../models/User')",
+		  "",
+		  "exports.bindUserWithRequest = () =>{",
+		  "    return async (req, res, next) =>{",
+		  "        if(!req.session.IsLoggedIn){",
+		  "            return next()",
+		  "        }",
+		  "        try{",
+		  "            let user = await User.findById(req.session.user._id)",
+		  "            req.user = user",
+		  "            next()",
+		  "        }catch(e){",
+		  "            console.log(e)",
+		  "            next(e)",
+		  "        }",
+		  "    }",
+		  "}",
+		  "",
+		  "exports.isAuthenticated = (req, res, next) => {",
+		  "    if(!req.session.IsLoggedIn){",
+		  "        return res.redirect('/auth/user/login')",
+		  "    }",
+		  "    next()",
+		  "}",
+		  "",
+		  "exports.isUnAuthenticated = (req, res, next) => {",
+		  "    if(req.session.IsLoggedIn){",
+		  "        return res.redirect('/dashboard')",
+		  "    }",
+		  "    next()",
+		  "}"
+		],
+		"description": "Session checking from every request"
+	},
+
+	"Set Session in a locals for Views layer": {
+		"prefix": "eSetLocals",
+		"body": [
+		  "module.exports = () => {",
+		  "    return (req, res, next) => {",
+		  "        res.locals.user = req.user",
+		  "        res.locals.IsLoggedIn = req.session.IsLoggedIn",
+		  "        next()",
+		  "    }",
+		  "}"
+		],
+		"description": "Set Session in a locals for Views layer"
+	},
+
+
+	"Express js image Uploader": {
+		"prefix": "eImageUploader",
+		"body": [
+		  "const multer = require('multer')",
+		  "const path = require('path')",
+		  "const storage = multer.diskStorage({",
+		  "    destination:(req, file, cb) => {",
+		  "        cb(null, 'public/uploads')",
+		  "    },",
+		  "    filename: (req, file, cb) => {",
+		  "        cb(null, file.fieldname + '-' + Date.now() + '-' + file.originalname)",
+		  "    }",
+		  "})",
+		  "",
+		  "const upload = multer({",
+		  "    storage,",
+		  "    limits: {",
+		  "        fileSize: 1024 * 1024 * 5",
+		  "    },",
+		  "    fileFilter: (req, file, cb) => {",
+		  "        const types = /jpeg|jpg|png|gif/",
+		  "        const extName = types.test(path.extname(file.originalname).toLowerCase())",
+		  "        const mimeType = types.test(file.mimetype)",
+		  "",
+		  "        if(extName && mimeType){",
+		  "            cb(null, true)",
+		  "        }else{",
+		  "            new Error('Only support Images')",
+		  "        }",
+		  "    }",
+		  "})",
+		  "",
+		  "module.exports = upload"
+		],
+		"description": "Express js image Uploader"
+	},
+
+	"Express js image Uploader middleware require": {
+		"prefix": "eImageUploaderMiddlewareRequire",
+		"body": [
+		  "const upload= require('../middleware/uploaderMiddleware')"
+		],
+		"description": "Express js image Uploader middleware require"
+	},
+
+	"Express js image Uploader middleware": {
+		"prefix": "eImageUploaderMiddleware",
+		"body": [
+		  "upload.single('my-file')"
+		],
+		"description": "Express js image Uploader middleware"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     			Mongoose 	      		    *
+*										    *
+*										    *
+**										   **/
+
+
+	"mongo db model": {
+		"prefix": "mongoose@model",
+		"body": [
+		  "const { Schema , model } = require('mongoose')",
+		  "",
+		  "const $nameSchema = new Schema({",
+		  "    username: {",
+		  "        type: String,",
+		  "        trim: true,",
+		  "        maxlength: 15,",
+		  "        required: true",
+		  "    },",
+		  "    profile: {",
+		  "        type: Schema.Types.ObjectId,",
+		  "        ref: 'Profile',",
+		  "        required : true",
+		  "    }",
+		  "}, {",
+		  "    timestamps: true",
+		  "})",
+		  "",
+		  "const $NAME = model('$NAME', $nameSchema)",
+		  "module.exports = $NAME"
+		],
+		"description": "mongo db model"
+	  },
+
+
+	"Express js authentication model": {
+	"prefix": "eAuthModel",
+	"body": [
+		"const { Schema , model } = require('mongoose')",
+		"",
+		"const $UserSchema = new Schema({",
+		"    firstName: {",
+		"        type: String,",
+		"        trim: true,",
+		"        maxlength: 20,",
+		"        required: true",
+		"    },",
+		"    lastName: {",
+		"        type: String,",
+		"        trim: true,",
+		"        maxlength: 20,",
+		"        required: true",
+		"    },",
+		"    email: {",
+		"        type: String,",
+		"        trim: true,",
+		"        maxlength: 25,",
+		"        required: true",
+		"    },",
+		"    password: {",
+		"        type: String,",
+		"        trim: true,",
+		"        minlength: 5,",
+		"        required: true",
+		"    },",
+		"    profile: {",
+		"        type: Schema.Types.ObjectId,",
+		"        ref: 'userProfile'",
+		"    }",
+		"}, {",
+		"    timestamps: true",
+		"})",
+		"",
+		"const User = model('User', $UserSchema)",
+		"module.exports = User"
+	],
+	"description": "Express js authentication model"
+	},
+
+
+
+/**										   **
+*										    *
+*										    *
+*     			Chrome extension		    *
+*										    *
+*										    *
+**										   **/
+
+	"webpack configure for google chrome extension": {
+		"prefix": "WebpackInit:CHROME",
+		"body": [
+		"const path = require('path');",
+		"const HtmlWebpackPlugin = require('html-webpack-plugin')",
+		"",
+		"module.exports = {",
+		"  entry: './app/index.js',",
+		"  output: {",
+		"    path: path.resolve(__dirname, 'dist'),",
+		"    filename: 'popup.js'",
+		"  },",
+		"  module: {",
+		"    rules: [",
+		"            { test: /\\.js$/, use: 'babel-loader'},",
+		"            { test: /\\.css$/, use: ['style-loader', 'css-loader']},",
+		"        ]",
+		"  },",
+		"  mode: 'development',",
+		"  plugins: [",
+		"      new HtmlWebpackPlugin({",
+		"          template: 'app/index.html'",
+		"      })",
+		"  ]",
+		"}"
+		],
+	"description": "webpack configure for google chrome extension"
+	},
+
+	"Js syntax init for chrome extension": {
+		"prefix": "JsInit:Chrome:webpack",
+		"body": [
+		  "import React from \"react\";",
+		  "import ReactDOM from \"react-dom\";",
+		  "",
+		  "require('./index.css');",
+		  "",
+		  "ReactDOM.render(",
+		  "  <h1>Hello, React!</h1>,",
+		  "  document.getElementById(\"root\")",
+		  ");"
+		],
+		"description": "Js syntax init for chrome extension"
+	}, 
+
+
+	/**
+	*
+	*		SendMessage
+	*
+	*/
+
+	"Google chrome extension send message APIs": {
+		"prefix": "cSendMessage",
+		"body": [
+		"chrome.runtime.sendMessage({greeting: \"hello\"}, function(response) {",
+		"  console.log(response.farewell);",
+		"});"
+		],
+		"description": "Google chrome extension send message APIs"
+	},
+
+	"Google chrome extension receive message APIs": {
+		"prefix": "cOnMessage",
+		"body": [
+		  "chrome.runtime.onMessage.addListener(",
+		  "  function(request, sender, sendResponse) {",
+		  "    console.log(sender.tab ?",
+		  "                \"from a content script:\" + sender.tab.url :",
+		  "                \"from the extension\");",
+		  "    if (request.greeting == \"hello\")",
+		  "      sendResponse({farewell: \"goodbye\"});",
+		  "  });"
+		],
+		"description": "Google chrome extension receive message APIs"
+	},
+
+	/**
+	*
+	*		Alarm
+	*
+	*/
+
+	"Google Chrome alarm functionalities": {
+		"prefix": "cAlarm",
+		"body": [
+		"chrome.alarms.create('$NAME', {",
+		"  periodInMinutes : 6",
+		"});",
+		"chrome.alarms.get('$NAME' , callbackable)",
+		"chrome.alarms.onAlarm.addListener( function(alarm) {",
+		"  if(alarm.name === '$NAME'){",
+		"  }",
+		"});"
+		],
+		"description": "Google Chrome alarm functionalities"
+	},
+
+
+	/**
+	*
+	*		ContextMenus
+	*
+	*/
+
+	"Context Menu bar fired when we clicked right of mouse on browser": {
+		"prefix": "cContextMenusCreate",
+		"body": [
+		  "chrome.contextMenus.create({",
+		  "    title : \"Title name\",",
+		  "    contexts : [\"all\"],",
+		  "    onclick : (context) =>{",
+		  "    }",
+		  "});",		 
+		],
+		"description": "Context Menu bar fired when we clicked right of mouse on browser"
+	  },
+
+	/**
+	*
+	*	Rich Notification
+	*
+	*/
+
+	"Google Chrome Rich Notificaitons": {
+		"prefix": "cRichNotifications",
+		"body": [
+		"var opt = {",
+		"    type: \"basic/list/progress\",",
+		"    title: \"\",",
+		"    message: \"\",",
+		"    iconUrl: \"icon.png\",",
+		"    progress: \"\",",
+		"    items: [{ title: \"\", message: \"\"},",
+		"    { title: \"\", message: \"\"},",
+		"    { title: \"\", message: \"\"}]",
+		"  };",
+		"chrome.notifications.create(opt, notCallback);",
+		"/**",
+		" *  Listening for and responding to events",
+		"**/",
+		"chrome.notifications.onClicked.addListener(replyBtnClick);",
+		],
+		"description": "Google Chrome Notificaitons"
+	},
+
+	/**
+	*
+	*	Tabs or Widows
+	*
+	*/	
+
+
+
+
+	
+/**										   **
+*										    *
+*										    *
+*     			React js				    *
+*										    *
+*										    *
+**										   **/
+
+
+	"React JS class based components": {
+		"prefix": "classComponents",
+		"body": [
+		"import React, {Component} from 'react'",
+		"",
+		"class $App extends Component{",
+		"    render(){",
+		"        return() ",
+		"    }",
+		"}",
+		"export default $App;"
+		],
+		"description": "React JS class based components"
+	},
+
+	"React JS Function based components": {
+		"prefix": "functionalComponents",
+		"body": [
+			"import React, { Component } from 'react';",
+			"",
+			"const $FunctionalName = (props) =>{",
+			"    return(",
+			"",
+			"    )",
+			"}",
+			"export default $FunctionalName;"
+		],
+		"description": "React JS Function based components"
+	},
+
+	"React state by constructor": {
+		"prefix": "state",
+		"body": [
+		"constructor(){",
+		"  super()",
+		"  this.state = {",
+		"     ",
+		"  }",
+		"}"
+		],
+		"description": "React native state by constructor"
+	},
+
+	"React JS set state": {
+		"prefix": "setState",
+		"body": [
+		"setState({",
+		"})"
+		],
+		"description": "React JS set state"
+	},
+
+	"React style property": {
+		"prefix": "style",
+		"body": [
+		"style={{ }}",
+		],
+		"description": "React state property"
+	},
+
+	"React module style sheet import": {
+		"prefix": "styleModuleImport",
+		"body": [
+		"import styles from './styles.module.css'",
+		],
+		"description": "React module style sheet import"
+	},
+
+	"React module style sheet getting": {
+		"prefix": "styleModuleGet",
+		"body": [
+		"className={styles.$classname}",
+		],
+		"description": "React module style sheet getting"
+	},
+
+	"React css class property": {
+		"prefix": "class",
+		"body": [
+		"className=\" \"",
+		],
+		"description": "React native style property Getting"
+	},
+
+/**										   **
+*										    *
+*										    *
+*     	      		 REDUX				    *
+*										    *
+*										    *
+**										   **/
+
+	"Basic redux implementation": {
+		"prefix": "reduxInit",
+		"body": [
+		  "import { createStore } from 'redux'",
+		  "const reducer = (state = {}, action) =>{",
+		  "      return state",
+		  "}",
+		  "const store = createStore(reducer)",
+		  "",
+		  "store.subscribe(()=>{",
+		  "  console.log(store.getState())",
+		  "})",
+		  "",
+		  "store.dispatch({type: 'none'})"
+		],
+		"description": "Basic redux implementation"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     			REACT NATIVE			    *
+*										    *
+*										    *
+**										   **/
+
+
+	"React native components": {
+		"prefix": "ComponentClass",
+		"body": [
+		"import React, {Component} from 'react'",
+		"import { } from 'react-native'",
+		"",
+		"export default class $App extends Component{",
+		"    render(){",
+		"        return() ",
+		"    }",
+		"}",
+		],
+		"description": "React native components"
+	},
+
+	"React native functional componenet": {
+		"prefix": "ComponentFunction",
+		"body": [
+		  "import React from 'react'",
+		  "import { } from 'react-native'",
+		  "",
+		  "const $App = props =>{",
+		  "  return(",
+		  "",
+		  "  )",
+		  "}",
+		  "",
+		  "export default $App"
+		],
+		"description": "Import react from react"
+	},
+
+	"Import react from react": {
+		"prefix": "ImportReact",
+		"body": [
+		  "import React from 'react'"
+		],
+		"description": "Import react from react"
+	},
+
+	"React native import": {
+		"prefix": "ImportNative",
+		"body": [
+		"import { } from 'react-native'",
+		],
+		"description": "React native import"
+	},
+
+	"Import react native Async storage": {
+		"prefix": "ImportAsyncStorage",
+		"body": [
+		  "import AsyncStorage from '@react-native-community/async-storage'"
+		],
+		"description": "Import react native Async storage"
+	},
+
+	"React native state by constructor": {
+		"prefix": "State",
+		"body": [
+		"constructor(){",
+		"  super()",
+		"  this.state = {",
+		"     ",
+		"  }",
+		"}"
+		],
+		"description": "React native state by constructor"
+	},
+	"React Native StateHook method": {
+		"prefix": "StateHook",
+		"body": [
+		  "const [$name, set$name] = React.useState();"
+		],
+		"description": "React Native StateHook method"
+	},
+
+	"React native componentDidMount": {
+		"prefix": "ComponentDidMount",
+		"body": [
+		  "componentDidMount()",
+		  "  {",
+		  "    const url = \"https://tutofox.com/foodapp/api.json\";",
+		  "    return fetch(url)",
+		  "    .then((response) => response.json())",
+		  "    .then((responseJson) => {",
+		  "      this.setState({",
+		  "        isLoading: false,",
+		  "        dataBanner: responseJson.banner,",
+		  "        dataCategories: responseJson.categories,",
+		  "        dataFood: responseJson.food",
+		  "      })",
+		  "    })",
+		  "    .catch((error) =>{",
+		  "      console.log(error)",
+		  "    })",
+		  "  }"
+		],
+		"description": "React native componentDidMount"
+	},
+
+	"React native Dimentions (height, Width)": {
+		"prefix": "Dimensions",
+		"body": [
+		"const {height, width} = Dimensions.get('window');"
+		],
+		"description": "React native Dimentions (height, Width)"
+	},
+	"React native style set": {
+		"prefix": "SetStyle",
+		"body": [
+		  "const styles = StyleSheet.create({",
+		  "",
+		  "})"
+		],
+		"description": "React native style set"
+	},
+	"React native style property Getting": {
+		"prefix": "GetStyle",
+		"body": [
+		"style={styles. }",
+		],
+		"description": "React native style property Getting"
+	},
+
+
+/*
+**
+** 		Core Components
+**
+*/
+
+
+	"React native core components View": {
+		"prefix": "View",
+		"body": [
+		"<View> </View>"
+		],
+		"description": "React native core components"
+	},
+	"Cooooooooooo": {
+		"prefix": "Text",
+		"body": [
+		  "<Text> </Text>",		 
+		],
+		"description": "Context Menu bar fired when we clicked right of mouse on browser"
+	},
+
+	"React Native Image component": {
+		"prefix": "Image",
+		"body": [
+		  "<Image/>"
+		],
+		"description": "React Native Image component"
+	},
+
+	"React native core components Image by URI": {
+		"prefix": "Img:source:uri",
+		"body": [
+		  "source={{uri: \" \"}}"
+		],
+		"description": "React native core components"
+	},
+	
+	"React Native Image's Properties": {
+		"prefix": "Img:source",
+		"body": [
+		  "source={}"
+		],
+		"description": "React Native Image's Properties"
+	},
+
+	"React Native ImageBackground Component": {
+		"prefix": "ImageBackground ",
+		"body": [
+		  "<ImageBackground > </ImageBackground>"
+		],
+		"description": "React Native ImageBackground Component"
+	},
+
+	"React Native Button components": {
+		"prefix": "Button",
+		"body": [
+		  "<Button/>"
+		],
+		"description": "React Native Button components"
+	},
+	"React Native Button's color properties": {
+		"prefix": "Btn:color",
+		"body": [
+		  "color=\"\""
+		],
+		"description": "React Native Button's color properties"
+	},
+	"React Native Button's title properties": {
+		"prefix": "Btn:title",
+		"body": [
+		  "title = \"\""
+		],
+		"description": "React Native Button's title properties"
+	},
+
+	"React Native Button's onPress properties": {
+		"prefix": "Btn:onPress",
+		"body": [
+		  "onPress={ $cb }"
+		],
+		"description": "React Native Button's onPress properties"
+	},
+	"React Native Button's touchSoundDisabled properties": {
+		"prefix": "Btn:touchSoundDisabled ",
+		"body": [
+			"touchSoundDisabled = { $false }"
+		],
+		"description": "React Native Button's touchSoundDisabled properties"
+	},
+
+    "React native core components ScrollView": {
+        "prefix": "ScrollView",
+        "body": [
+        "<ScrollView> </ScrollView>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core components TextInput": {
+        "prefix": "TextInput",
+        "body": [
+        "<TextInput/>"
+        ],
+        "description": "React native core components"
+	},
+	
+	"React Native TextInput's onChangeText properties": {
+		"prefix": "TxtInpt:onChangeText",
+		"body": [
+		  "onChangeText={text => onChangeText(text)}"
+		],
+		"description": "React Native TextInput's onChangeText properties"
+	},
+
+    "React native core component TouchableOpacity": {
+        "prefix": "TouchableOpacity",
+        "body": [
+        "<TouchableOpacity> </TouchableOpacity>"
+        ],
+        "description": "React native core components"
+    },
+
+	"React native Touchable opacity propperties onPress": {
+		"prefix": "TchblOpcty:onPress ",
+		"body": [
+		  "onPress = { $cb }"
+		],
+		"description": "React native Touchable opacity propperties onPress"
+	},
+	
+    "React native core component FlatList": {
+        "prefix": "FlatList",
+        "body": [
+        "<FlatList/>"
+        ],
+        "description": "React native core components"
+	},
+
+	"React Native FlatList's properties": {
+		"prefix": "FltLst:data",
+		"body": [
+			"data={}"
+		],
+		"description": "React Native FlatList's properties"
+	},
+
+	"React Native FlatList's renderItem properties": {
+		"prefix": "FltLst:renderItem",
+		"body": [
+		  "renderItem={ $cb }"
+		],
+		"description": "React Native FlatList's renderItem properties"
+	},
+
+	"React Native modal": {
+		"prefix": "Modal",
+		"body": [
+		  "<Modal> </Modal>"
+		],
+		"description": "React Native modal"
+	},
+
+	"React Native modal visible properties": {
+		"prefix": "Mdl:visible",
+		"body": [
+		  "visible = \"No\""
+		],
+		"description": "React Native modal visible properties"
+	},
+
+	"React Native modal animationType properties": {
+		"prefix": "Mdl:animationType",
+		"body": [
+		  "animationType=\"slide\""
+		],
+		"description": "React Native modal animationType properties"
+	},
+
+    "React native core component SafeAreaView": {
+        "prefix": "SafeAreaView",
+        "body": [
+        "<SafeAreaView> </SafeAreaView>"
+        ],
+        "description": "React native core component SafeAreaView"
+	},
+
+/*
+**
+** 		React Native Navigation 
+**
+*/	
+
+	"react stack gesture handler up to everybody": {
+		"prefix": "ImportGestureHandler",
+		"body": [
+		"import 'react-native-gesture-handler';"
+		],
+		"description": "react stack gesture handler up to everybody"
+	},
+
+	"react stack navigation import": {
+		"prefix": "ImportStackNavigation",
+		"body": [
+		  "import { NavigationContainer } from '@react-navigation/native';",
+		  "import { createStackNavigator } from '@react-navigation/stack';"
+		],
+		"description": "react stack navigation import"
+	},
+
+	"react stack Stack navigation creator": {
+		"prefix": "CreateStackNavigator",
+		"body": [
+		  "const Stack = createStackNavigator();"
+		],
+		"description": "react stack Stack navigation creator"
+	},
+
+	"React Native Stack Navigation Set": {
+		"prefix": "SetStackNavigation",
+		"body": [
+		  "<NavigationContainer>",
+		  "  <Stack.Navigator>",
+		  "    <Stack.Screen name=\"Home\" component={HomeScreen} />",
+		  "  </Stack.Navigator>",
+		  "</NavigationContainer>"
+		],
+		"description": "React Native Stack Navigation Set"
+	},
+
+
+
+
+/*
+**
+** 		React Native Redux 
+**
+*/
+
+
+	"react native reducer declared": {
+		"prefix": "RnReducer",
+		"body": [
+		  "import * as actionTypes from './actionTypes'",
+		  "const initState = {",
+		  "    placeList: []",
+		  "}",
+		  "",
+		  "export const reducer = (state =initState, action ) =>{",
+		  "    switch (action.type){",
+		  "        case actionTypes.ADD_PLACE: ",
+		  "            return {",
+		  "                ...state,",
+		  "                placeList: state.placeList.concat(action.payload)",
+		  "            }",
+		  "        case actionTypes.DELETE_PLACE:",
+		  "            return{",
+		  "                ...state,",
+		  "                placeList: state.placeList.filter(place => place.key !== action.payload)",
+		  "            }",
+		  "        default:",
+		  "            return state;",
+		  "    }",
+		  "}"
+		],
+		"description": "react native reducer declared"
+	},
+
+	"react native redux store declared": {
+		"prefix": "RnStore",
+		"body": [
+			"import { createStore, applyMiddleware } from 'redux'",
+			"import { reducer } from './reducer'",
+			"import thunk from 'redux-thunk'",
+			"",
+			"const store = createStore(reducer, applyMiddleware(thunk))",
+			"",
+			"export default store"
+		],
+		"description": "react native redux store declared"
+	},
+	
+	"react native redux action Type declare": {
+		"prefix": "RnActionTypes",
+		"body": [
+		  "export const ADD_PLACE = 'ADD_PLACE';",
+		  "export const DELETE_PLACE = 'DELETE_PLACE'"
+		],
+		"description": "react native redux action Type declare"
+	},
+
+	"react native redux action creator": {
+		"prefix": "RnActionCreators",
+		"body": [
+		  "import * as actionTypes from './actionTypes'",
+		  "",
+		  "export const addPlace = place =>{",
+		  "    return {",
+		  "        type : actionTypes.ADD_PLACE,",
+		  "        payload: place",
+		  "    }",
+		  "}",
+		  "export const deletePlace = key =>{",
+		  "    return{",
+		  "        type: actionTypes.DELETE_PLACE,",
+		  "        payload: key",
+		  "    }",
+		  "}"
+		],
+		"description": "react native redux action creator"
+	},
+
+	"react native redux import provider": {
+		"prefix": "RnImportProvider",
+		"body": [
+		  "import { Provider } from 'react-redux'"
+		],
+		"description": "react native redux import provider"
+	},
+
+	"react native redux import Store": {
+		"prefix": "RnImportStore",
+		"body": [
+		  "import Store from './src/redux/store'"
+		],
+		"description": "react native redux import Store"
+	},
+	"react native redux provider wrapper": {
+		"prefix": "RnProvider",
+		"body": [
+		  "<Provider store={Store}>",
+		  "</Provider>"
+		],
+		"description": "react native redux provider wrapper"
+	}
+
+
+}
+

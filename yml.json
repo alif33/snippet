@@ -1,0 +1,74 @@
+{
+
+    /**										               **
+	  *										                  *
+	  *										                  *
+	  *     		    DRUPAL THEMING      		*
+	  *										                  *
+	  *										                  *
+    **										               **/
+    
+
+	"Drupal 8 theme information": {
+        "prefix": "dInit",
+        "body": [
+        "name: First theme",
+        "description: Creates a page showing starter theme",
+        "package: Custom",
+        "type: theme",
+        "core: 8.x",
+        " ",
+        ],
+        "description": "Drupal 8 theme information"
+    },
+
+    "Drupal 8 theming css & js include": {
+        "prefix": "dSetCssJs",
+        "body": [
+          "global-css:",
+          "  css:",
+          "    theme:",
+          "      css/style.css: {}",
+          "",
+          "global-js:",
+          "  js:",
+          "    js/main.js: {}",
+          "  dependencies:",
+          "    - core/jquery"
+        ],
+        "description": "Drupal 8 theming css & js include"
+    },
+
+    "Drupal 8 theming css & js get": {
+        "prefix": "dGetCssJs",
+        "body": [
+          "libraries:",
+          "  - endymion/global-css",
+          "  - endymion/global-js"
+        ],
+        "description": "Drupal 8 theming css & js get"
+    },
+
+    "Drupal 8 theming default css removing": {
+        "prefix": "dRemoveCssDefalt",
+        "body": [
+          "stylesheets-remove:",
+          "  - core/themes/stable/css/views/views.module.css"
+        ],
+        "description": "Drupal 8 theming default css removing"
+    },
+
+    "Drupal block region set": {
+      "prefix": "dSetBlockRegion",
+      "body": [
+        "regions: ",
+        "  header: 'Header'",
+        "  main_navigation: 'Main Navigation'",
+        "  content: 'Main Content'",
+        "  sidebar: 'Sidebar'",
+        "  footer: 'Footer"
+      ],
+      "description": "Drupal block region set"
+    }
+
+}

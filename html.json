@@ -1,0 +1,1062 @@
+{
+
+	/**										   **
+	*										    *
+	*										    *
+	*     		 		PHP			 		    *
+	*										    *
+	*										    *
+	**										   **/
+
+	"php blank syntax": {
+		"prefix": "php",
+		"body": [
+		  "<?php",
+		  "    ",
+		  "?>",
+		],
+		"description": "php blank syntax"
+	},
+
+	"Database configuration method": {
+		"prefix": "p@dbConfig",
+		"body": [
+		  "<?php",
+		  "define(\"DB_HOST\", \"localhost\");",
+		  "define(\"DB_USER\", \"root\");",
+		  "define(\"DB_PASS\", \"\");",
+		  "define(\"DB_NAME\", \"$db_name\");"
+		],
+		"description": "Database configuration method"
+	},
+
+	"Database connecting method": {
+		"prefix": "p@dbConnect",
+		"body": [
+		  "<?php",
+		  "inclde 'config/config.php';",
+		  "",
+		  "Class Database{",
+		  " public $$host   = DB_HOST;",
+		  " public $$user   = DB_USER;",
+		  " public $$pass   = DB_PASS;",
+		  " public $$dbname = DB_NAME;",
+		  "",
+		  "public $$link;",
+		  "public $$error;",
+		  "",
+		  "public function __construct(){",
+		  "     $$this->connectDB();",
+		  " }",
+		  "",
+		  " private function connectDB(){",
+		  " $$this->link = new mysqli($$this->host, $$this->user, $$this->pass, $$this->dbname);",
+		  " if(!$$this->link){",
+		  "      $$this->error =\"Connection fail\".$$this->link->connect_error;",
+		  "      return false;",
+		  " }",
+		  " }",
+		  "",
+		  "// Select or Read data",
+		  "",
+		  " public function select($$query){",
+		  "      $$result = $$this->link->query($$query) or die($$this->link->error.__LINE__);",
+		  "      if($$result->num_rows > 0){",
+		  "         return $$result;",
+		  "      } else {",
+		  "         return false;",
+		  "      }",
+		  " }",
+		  " ",
+		  " // Insert data",
+		  " public function insert($$query){",
+		  " $$insert_row = $$this->link->query($$query) or die($$this->link->error.__LINE__);",
+		  " if($$insert_row){",
+		  "      header(\"Location: index.php?msg=\".urlencode('Data Inserted successfully.'));",
+		  "      exit();",
+		  " } else {",
+		  "      die(\"Error :(\".$$this->link->errno.\")\".$$this->link->error);",
+		  " }",
+		  "  }",
+		  "  ",
+		  "    // Update data",
+		  "  public function update($$query){",
+		  " $$update_row = $$this->link->query($$query) or die($$this->link->error.__LINE__);",
+		  " if($$update_row){",
+		  "     header(\"Location: index.php?msg=\".urlencode('Data Updated successfully.'));",
+		  "     exit();",
+		  " } else {",
+		  "     die(\"Error :(\".$$this->link->errno.\")\".$$this->link->error);",
+		  " }",
+		  "  }",
+		  "  ",
+		  "  // Delete data",
+		  "   public function delete($$query){",
+		  " $$delete_row = $$this->link->query($$query) or die($$this->link->error.__LINE__);",
+		  " if($$delete_row){",
+		  "     header(\"Location: index.php?msg=\".urlencode('Data Deleted successfully.'));",
+		  "     exit();",
+		  " } else {",
+		  "     die(\"Error :(\".$$this->link->errno.\")\".$$this->link->error);",
+		  " }",
+		  "  }",
+		  " ",
+		  "}"
+		],
+		"description": "Database connecting method"
+	},
+
+	"Session set in OOp": {
+	"prefix": "p@sessionSet",
+	"body": [
+		"<?php",
+		"class Session{",
+		"   public static function init(){",
+		"      session_start();",
+		"  }",
+		"",
+		"  public static function set($$key, $$val){",
+		"    $$_SESSION[$$key] = $$val;",
+		"   }",
+		"",
+		"  public static function get($$key){",
+		"      if (isset($$_SESSION[$$key])) {",
+		"          return $$_SESSION[$$key];",
+		"      } else {",
+		"          return false;",
+		"      }",
+		"  }",
+		"",
+		"   public static function checkSession(){",
+		"     self::init();",
+		"     if (self::get(\"adminlogin\") == false) {",
+		"         self::destroy();",
+		"         header(\"Location:login.php\");",
+		"     }",
+		"   }",
+		"",
+		"  public static function checkLogin(){",
+		"     self::init();",
+		"     if (self::get(\"adminlogin\") == true) {",
+		"         header(\"Location:dashbord.php\");",
+		"     }",
+		"  }",
+		"",
+		"  public static function destroy(){",
+		"     session_destroy();",
+		"     header(\"Location:dashbord.php\");",
+		"   }",
+		"}"
+	],
+	"description": "Session set in OOp"
+	},
+
+	"Get the all post by query": {
+		"prefix": "p@getPost",
+		"body": [
+		  "<?php",
+		  "$$read = $$db->select($$query);",
+		  "if($$read){  ",
+		  "    while($$print=$$read->fetch_assoc()){ ?>",
+		  "/*",
+		  "*  <?php echo $$print['id'] ?>",
+		  "*/",
+		  "<?php",
+		  "   }",
+		  "}  ",
+		  "?>"
+		],
+		"description": "Get the all post by query"
+	},
+
+
+
+	  
+/**										   **
+*										    *
+*										    *
+*     		Wordpress THemiNg	 		    *
+*										    *
+*										    *
+**										   **/
+
+
+
+
+/**
+*			ENVIRONMENT SeTUp
+*/
+
+	"wordpress THeMe syntax applier": {
+		"prefix": "w",
+		"body": [
+		"w@",
+		],
+		"description": "wordpress THeMe syntax applier"
+	},
+
+	"wordpress stylesheet information": {
+		"prefix": "w@getStylesheetInformation",
+		"body": [
+		  "<?php wp_get_theme()->get( 'Version' ); ?>",
+		],
+		"description": "wordpress stylesheet information"
+	},
+
+	"wordpress short form of condition": {
+		"prefix": "w@ifTernary",
+		"body": [
+		"<?php echo is_singular() ? '$right' : '$false'; ?>",
+		"<!-- ",
+		"  is_home()",
+		"  is_front_page()",
+		"  is_archive()",
+		"  is_category()",
+		"  is_single() ",
+		"-->"
+		],
+		"description": "wordpress short form of condition"
+	},
+
+/**
+*				HEAD
+*/	
+	"wp full head here.........": {
+		"prefix": "w@headFull",
+		"body": [
+		  "<!DOCTYPE html>",
+		  "<html <?php language_attributes();?>>",
+		  "<head>",
+		  "    <meta charset=\"<?php bloginfo( 'charset' ); ?>\">",
+		  "    <link rel=\"shortcut icon\" href=\"<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico\" />",
+		  "<?php wp_head();?>",
+		  "</head>"
+		],
+		"description": "wp full head here..."
+	},
+
+	"wp language attributes on header": {
+	"prefix": "w@lang",
+	"body": [
+		"<html<?php language_attributes();?>>"
+	],
+	"description": "wp language attributes on header"
+	},
+
+	"wp meta tag ....": {
+		"prefix": "w@meta_charset",
+		"body": [
+		  "<meta charset=\"<?php bloginfo( 'charset' );?>\">"
+		],
+		"description": "wp meta tag ...."
+	},
+	
+	"enqueue link attach before css|js|image": {
+		"prefix": "w@path",
+		"body": [
+		  "<?php echo esc_url(get_template_directory_uri());?>/"
+		],
+		"description": "enqueue link attach before css|js|image"
+	},
+
+	"site title function function": {
+		"prefix": "w@siteTitle",
+		"body": [
+		  "<?php bloginfo('name'); ?>"
+		],
+		"description": "site title function "
+	},
+
+	"wp header Identify By this Tag": {
+		"prefix": "w@head",
+		"body": [
+		  "<?php wp_head();?>"
+		],
+		"description": "wp head identifier here..."
+	},
+	"get_header function": {
+		"prefix": "w@getHeader",
+		"body": [
+		  "<?php get_header() ;?>"
+		],
+		"description": "get_header function"
+	},
+
+/**
+*				BODY
+*/
+
+	"wp Body Identify By this Tag": {
+		"prefix": "w@bodyClass",
+		"body": [
+		"<?php body_class();?>"
+		],
+		"description": "wp body Identifier AND body class here..."
+	},
+
+/**
+*				HEADER
+*/
+
+	"wordpress site url in this section": {
+		"prefix": "w@siteUrl",
+		"body": [
+		"<?php /*bloginfo('url')*/echo site_url('/');?>"
+		],
+		"description": "wordpress site url in this section"
+	},
+
+	"Wordpress theme main logo.": {
+		"prefix": "w@getLogo",
+		"body": [
+		  "<?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo();}?> "
+		],
+		"description": "Wordpress theme main logo."
+	},
+
+	"Wordpress theme mobile version logo.": {
+		"prefix": "w@getLogoMobile",
+		"body": [
+		  "<?php if($mobile_version_logo = get_theme_mod('mobile_version_logo')){ ?> ",
+		  "      <a class=\"\" href=\"<?php echo site_url('/');?>\"><img class=\"\" src=\"<?php echo $mobile_version_logo;?>\"  alt=\"\" /> </a>",
+		  "<?php } ?>"
+		],
+		"description": "Wordpress theme mobile version logo."
+	},
+
+/**
+*				NAVBar
+*/
+
+	"wordpress navigation menu ": {
+		"prefix": "w@getNavMenu",
+		"body": [
+		  "<?php",
+		  " wp_nav_menu( array(",
+		  "    'theme_location'    => \"\",",
+		  "    'menu'              => \"\",",
+		  "    'menu_class'        => \"\",",
+		  "    'menu_id'           => \"\",",
+		  "    'container'         => \"\",",
+		  "    'container_class'   => \"\",",
+		  "    'container_id'      => \"\",",
+		  "    'before'            => \"\",",
+		  "    'after'             => \"\",",
+		  "    'link_before'       => \"\",",
+		  "    'link_after'        => \"\",",
+		  "    'depth'             => \"\",",
+		  "    'fallback_cb'       => \"\",",
+		  "//  'walker'            => new walker() \"\",",
+		  " ) );",
+		  "?>",
+		],
+		"description": "wordpress navigation menu "
+	},
+
+	"b4_navbar is getting to use this code .": {
+		"prefix": "w@getB4NavNalker",
+		"body": [
+		  "<?php",
+		  "wp_nav_menu( array(",
+		  "    'theme_location'    => 'primary',",
+		  "    'depth'             => 2,",
+		  "    'container'         => 'div',",
+		  "    'container_class'   => 'collapse navbar-collapse',",
+		  "    'container_id'      => 'navbarResponsive',   //container_id = <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">",
+		  "    'menu_class'        => 'nav navbar-nav ml-auto',",
+		  "    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',",
+		  "    'walker'            => new WP_Bootstrap_Navwalker(),",
+		  ") );",
+		  "?>"
+		],
+		"description": "b4_navbar is getting to use this code ."
+	},
+
+
+/**
+*				SEarchBar
+*/
+
+
+	"wordpress search form full syntax": {
+		"prefix": "w@searchForm",
+		"body": [
+			"<form action=\"<?php echo home_url('/');?>\" method=\"get\">",
+			"  <input type=\"search\" name=\"s\" placeholder=\"<?php echo esc_attr_x('Search...', 'placeholder', 'taxt_domain'); ?>\" value=\"<?php echo get_search_query();?>\">",
+			"  <button class=\"\" type=\"\"></button>",
+			"</form>"
+		],
+		"description": "wordpress search form full syntax"
+	},
+
+	"wordpress search form getting to write this syntax": {
+		"prefix": "w@getSearchForm",
+		"body": [
+		"<?php get_search_form();?>"
+		],
+		"description": "wordpress search form getting to write this syntax"
+	},
+
+	"wordpress search keyword showing by this code in search.php": {
+		"prefix": "w@searchKeywordShowing",
+		"body": [
+		"<?php _e( 'Search results for:', 'text_domain' ); echo '&quot'.$$s.'&quot'; ?>",
+		"<!--",
+		" alternative way for gettigng different style",
+		" <?php echo get_search_query();?>",
+		"-->",
+		],
+		"description": "wordpress search keyword showing by this code in search.php"
+	},
+
+/**
+*				POSTs
+*/
+
+/**
+*					POSTs filter
+*/
+
+	"wp get all post's loop start": {
+		"prefix": "w@havePostStart",
+		"body": [
+		"<?php",
+		"if ( have_posts() ) :",
+		"    while ( have_posts() ) : the_post();",
+		"?>"
+		],
+		"description": "wp get all post's LooP END "
+	},
+
+	"wp get all post's loop end": {
+		"prefix": "w@havePostEnd",
+		"body": [
+		"<?php     ",
+		"endwhile;",
+		"else :",
+		"    _e( 'Sorry, no posts were found.', 'textdomain' );",
+		"endif;",
+		"?>"
+		],
+		"description": "wp get all post's loop END"
+	},
+
+
+
+	"Wordpress getting custom post type": {
+		"prefix": "w@customPost",
+		"body": [
+		  "<?php",
+		  "$$query = new WP_Query(array('post_type' => 'post'));",
+		  "",
+		  "if ($$query->have_posts() ) :",
+		  "    while ( $$query->have_posts() ) : $$query->the_post();",
+		  "?>",
+		  "",
+		  "<?php     ",
+		  "endwhile;",
+		  "else :",
+		  "    _e( 'Sorry, no posts were found.', 'textdomain' );",
+		  "endif;",
+		  "wp_reset_postdata();",
+		  "?>"
+		],
+		"description": "Wordpress getting custom post type"
+	},
+
+	"wordpress post controlling by condition ": {
+		"prefix": "w@postLoopControlling",
+		"body": [
+		  "<?php",
+		  "$$i = 0;",
+		  "if (have_posts() ) :",
+		  "    while ( have_posts() ) : the_post();",
+		  "if($$i !=0 && $$i !=1 && $$i !=2){",
+		  "?>",
+		  " //$$i ==0 || $$i ==1 || $$i ==2 ",
+		  "",
+		  "<?php  ",
+		  " } $$i++;   ",
+		  "endwhile;",
+		  "else :",
+		  "    _e( 'Sorry, no posts were found.', 'textdomain' );",
+		  "endif;",
+		  "?> "
+		],
+		"description": "wordpress post controlling by condition "
+	},
+
+	"wordpress random post order by category": {
+		"prefix": "w@randomPostCategory",
+			"body": [
+		  "  $$query = new WP_Query(array(",
+		  "       'post_type'      => 'post',",
+		  "       'posts_per_page' => 3, ",
+		  "       'orderby'        => 'rand',",
+		  "       'order_by'       => 'title',",
+		  "       'order'          => 'DESC',",
+		  "       'category_name'  => 'test'   ",
+		  "  ));",
+		],
+		"description": "wordpress random post order by category"
+	},
+
+/**
+*					POSTs body
+*/
+
+	"wp post title": {
+		"prefix": "w@theTitle",
+		"body": [
+		  "<?php the_title(); ?> "
+		],
+		"description": "wp post title"
+	},
+
+	"wp post get_the_title": {
+		"prefix": "w@getTheTitle",
+		"body": [
+		  "<?php echo wp_trim_words( get_the_title(), 2 , '');?> "
+		],
+		"description": "wp post title"
+	},
+
+	"Full content here": {
+		"prefix": "w@theContent",
+		"body": [
+		  "<?php the_content(); ?>",
+		  "<!--",
+		  "",
+		  " echo || wp_trim_words( get_the_content() , 20)",
+		  "",
+		  "-->",
+
+		],
+		"description": "Full content here"
+	},
+
+	"wp post excerpt": {
+		"prefix": "w@theExcerpt",
+		"body": [
+		  "<?php the_excerpt(); ?> "
+		],
+		"description": "wp post excerpt"
+	},
+
+	"wp for single post link": {
+		"prefix": "w@thePermalink",
+		"body": [
+		  "<?php the_permalink(); //goto single page?>"
+		],
+		"description": "wp for single post link"
+	},
+
+	"wp post date": {
+		"prefix": "w@theDate",
+		"body": [
+		  "<?php the_date(); ?>",
+		],
+		"description": "wp post date"
+	},
+
+
+	"wp post author": {
+		"prefix": "w@theAuthor",
+		"body": [
+		  "<?php the_author(); ?> "
+		],
+		"description": "wp post author"
+	},
+
+	"wordpress posts author meta (authors details)": {
+		"prefix": "w@getTheAuthorMeta",
+		"body": [
+		  "<?php echo get_the_author_meta( '$field', $$post->post_author )?>",
+		  "<!--",
+		  " //the_author_meta()",
+		  " //$$field  =  inspect and get name($$field)",
+		  " 'custom_id' = twitter,linkedin" ,
+		  " 'admin_color' = ",
+		  " aim",
+		  " comment_shortcuts",
+		  " description",
+		  " display_name",
+		  " first_name",
+		  " ID",
+		  " jabber",
+		  " last_name",
+		  " nickname",
+		  " plugins_last_view",
+		  " plugins_per_page",
+		  " rich_editing",
+		  " syntax_highlighting",
+		  " user_activation_key",
+		  " user_description",
+		  " user_email",
+		  " user_firstname",
+		  " user_lastname",
+		  " user_level",
+		  " user_login",
+		  " user_nicename",
+		  " user_pass",
+		  " user_registered",
+		  " user_status",
+		  " user_url",
+		  " yim",
+		  "-->"
+		],
+		"description": "wordpress posts author meta (authors details)"
+	},
+
+	"wordpress author posts number (neumeric)": {
+		"prefix": "w@getAuthorPostsNumber",
+		"body": [
+		  "<?php echo  number_format_i18n(get_the_author_posts()) ; ?>"
+		],
+		"description": "wordpress author posts number (neumeric)"
+	},
+
+	"wordpress author posts url": {
+		"prefix": "w@getAuthorPostsUrl",
+		"body": [
+		  "<?php echo get_author_posts_url( get_the_author_meta('ID') , get_the_author_meta( 'user_nicename' )) ?>",
+		  "<!--",
+		  " 2nd-parameter optional",
+		  "-->"
+		],
+		"description": "wordpress author posts url"
+	},
+
+	"wordpress avatar for author details": {
+		"prefix": "w@getAvatar",
+		"body": [
+		  "<?php echo get_avatar( get_the_author_meta( 'ID' ), $size, $default, $alt, $args ) ?>",
+		  "<!--",
+		  " //Default value: null",
+		  " //https://developer.wordpress.org/reference/functions/get_avatar/ ",
+		  "",
+		  " $id_or_email => get_the_author_meta( 'ID' )/( 'user_email' )",
+		  " $size  =>       Default value: 96px",
+		  " $alt    => Alternative text to use in <img> tag.",
+		  " $args =>array(",
+		  "  'height'=> (int) in pixels. Defaults to $size.",
+		  "  'width'  => (int)in pixels. Defaults to $size.",
+		  "  'force_default'  => (bool) Whether to always show the default image, never the Gravatar. Default false.",
+		  "  'rating'  => (string) What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are judged in that order. Default is the value of the 'avatar_rating' option.",
+		  "  'scheme'  => (string) URL scheme to use. See set_url_scheme() for accepted values.",
+		  "  'class'  => (array|string) Array or string of additional classes to add to the <img> element.",
+		  "  'force_display'  => (bool) Whether to always show the avatar - ignores the show_avatars option. Default false.",
+		  "  'extra_attr' => (string) HTML attributes to insert in the IMG element. Is not sanitized. Default empty.",
+		  " )",
+		  "-->"
+		],
+		"description": "wordpress avatar for author details"
+	},
+
+	"Wordpress custom posts meta showing": {
+		"prefix": "w@CustomFieldShowing",
+		"body": [
+		  "<?php echo get_post_meta($post->ID, 'sr_cat' , true);?>"
+		],
+		"description": "Wordpress custom posts meta showing"
+	},
+
+	"wp post category": {
+		"prefix": "w@theCategory",
+		"body": [
+		  "<?php the_category(); ?> "
+		],
+		"description": "wp post category"
+	},
+
+	"wordpress the_tags function": {
+		"prefix": "w@theTags",
+		"body": [
+		  "<?php the_tags( 'Tags :', ' , ' , '') ?>"
+		],
+		"description": "wordpress the_tags function"
+	},
+
+	"wordpress default post_thumbnail": {
+		"prefix": "w@thePostThumbnail",
+		"body": [
+		  "<?php the_post_thumbnail('thumbnail' , array('class' => '/*for further styling to added a css class*/')); ?>",
+		],
+		"description": "wordpress default post_thumbnail"	  
+	},
+
+
+	"using post_thumbnail out side of index.php|single.php|post.php": {
+		"prefix": "w@getAttachmentImageSrc",
+		"body": [
+		  "<?php",
+		  "$$img = wp_get_attachment_image_src(get_post_thumbnail_id($$post->ID) , 'large'); //here large is size of image",
+		  "//check--print_r($$img);",
+		  "//using background-image: url('php echo $$img[0];'",
+		  "// height=\"php echo $$img[1];\"",
+		  "// width=\"php echo $$img[0];\"",
+		  "?>"
+		],
+		"description": "using post_thumbnail out side of index.php|single.php|post.php"
+	},
+
+
+	"wordpress posts pagination": {
+		"prefix": "w@postsPaginationNext:prev",
+		"body": [
+		  "<?php previous_posts_link('&larr; Previous posts'); ?>",
+		  "<?php next_posts_link('Older posts &rarr;', 0) ; ?>"
+		],
+		"description": "wordpress page pagination"
+	},
+
+	"wp post pagination neumeric page number": {
+		"prefix": "w@postsPaginationNeumeric",
+		"body": [
+		  "<?php the_posts_pagination(",
+		  "   array(",
+		  "      'mid_size'           => 1,",
+		  "      'prev_text'          => _x( 'Previous', 'previous set of posts' ),",
+		  "      'next_text'          => _x( 'Next', 'next set of posts' ),",
+		  "      'screen_reader_text' => __( 'Posts navigation' ),",
+		  "   )) ;",
+		  "?>"
+		],
+		"description": "wp post pagination neumeric page number"
+	},
+	
+	"wordpres all comments with link and to get comments.php file": {
+		"prefix": "w@commentsPopupLink",
+		"body": [
+		  "<?php comments_popup_link( 'No comments >>' , '1 comment >>' , 'comments >>'  ); ?>",
+		  "<!-- //  if(comments = 0){ ",
+		  "             echo 'No comments >>';",
+		  "          }else if(comments = 1){",
+		  "             echo '1 comment >>';",
+		  "          }else{",
+		  "             echo 'comments >>';",
+		  "          } ",
+		  "-->"
+		],
+		"description": "wordpres all comments with link and to get comments.php file"
+	},
+
+	"wordpress comments form(comments field)": {
+		"prefix": "w@commentForm",
+		"body": [
+		  "<?php comment_form(); ?>",
+		  "<!-- ",
+		  " https://codex.wordpress.org/Function_Reference/comment_form",
+		  " -->"
+		],
+		"description": "wordpress comments form(comments field)"
+	},
+
+	"wordpress comments template(comments.php)": {
+		"prefix": "w@commentsTemplate",
+		"body": [
+		  "<?php comments_template( ' ' , true );?>"
+		],
+		"description": "wordpress comments template(comments.php)"
+	},
+
+
+	"Wordpress custom page linking from single.php": {
+		"prefix": "w@customPageBypassing",
+		"body": [
+		  "<!-- //please write on single.php -->",
+		  "<?php if ( have_posts()) { the_post(); rewind_posts(); } ?>",
+		  "<?php if('slider' == get_post_type()){ ?>",
+		  "<?php include (TEMPLATEPATH . '/bypass-page.php'); //goto the page ?> ",
+		  "",
+		  "<?php } else{ ?>",
+		  "<?php include(TEMPLATEPATH . '/bulk.php'); ?> <?php } ?>"
+		],
+		"description": "Wordpress custom page linking from single.php"
+	},
+
+	"wordpress category list showing by get_categories function": {
+		"prefix": "w@getCategoriesList",
+		"body": [
+		  "<?php    ",
+		  "    $$args = array(",
+		  "    'orderby'  => 'slug',",
+		  "    'parent' => 0",
+		  "    );",
+		  "    $$categories = get_categories($$args);",
+		  "    foreach($$categories as $$category){ ?>",
+		  "<li><a href=\"<?php echo get_category_link($$category->term_id);?>\"  rel=\"bookmark\"><i class=\"fa fa-check\"><?php echo $$category->name;?></i> <?php echo $$category->description;?></a></li>  ",
+		  "<?php } ?>"
+		],
+		"description": "wordpress category list showing by get_categories function"
+	},
+
+	"wordpress tag list from foreeach list": {
+		"prefix": "w@TagsList",
+		"body": [
+		  "<?php",
+		  "  $$posttags = get_the_tags();",
+		  "  if ($$posttags) {",
+		  "  foreach($$posttags as $$tag) { ?> ",
+		  "    <a href=\"<?php echo $$tag->term_id; ?> \"><?php echo $$tag->name . ' '; ?></a>                            ",
+		  "<?php }} ?>"
+		],
+		"description": "wordpress tag list from foreeach list"
+	},
+
+	"wordpress similar post looping by tag": {
+		"prefix": "w@tagsLooping",
+		"body": [
+		  "<?php",
+		  "",
+		  "    $$tags = wp_get_post_tags($$post->ID);",
+		  "    if($$tags){",
+		  "        $$first_tag = $$tags[0]->term_id;",
+		  "        $$query = new WP_Query(array(",
+		  "            'tag__in' =>array($$first_tag),",
+		  "            'post__not_in' =>array($$post->ID),",
+		  "            'posts_per_page' =>2, ",
+		  "        ));     ",
+		  "    }",
+		  "    if ( have_posts() ) :",
+		  "        while ( $$query->have_posts() ) : $$query->the_post();",
+		  "?>",
+		  "",
+		  "",
+		  "<?php     ",
+		  "endwhile;",
+		  "else :",
+		  "    _e( 'Sorry, no posts were found.', 'textdomain' );",
+		  "endif;",
+		  "?>"
+		],
+		"description": "wordpress similar post looping by tag"
+	},
+
+	"wordpress timeways post list showing by this function": {
+		"prefix": "@wGetArchiveList",
+		"body": [
+		  "<?php ",
+		  "$$args = array(",
+		  "'type'            => 'monthly', ",
+		  "'limit'           => '',",
+		  "'format'          => 'html', ",
+		  "'before'          => '',",
+		  "'after'           => '',",
+		  "'show_post_count' => true,",
+		  "'echo'            => 1,",
+		  "'order'           => 'DESC',",
+		  "'post_type'       => 'slider'",
+		  ");",
+		  "wp_get_archives( $args ); ",
+		  "?>",
+		  "<!--",
+		  " 'type'              yearly|monthly(Default)|daily|weekly|postbypost(posts ordered by post date)|alpha(same as postbypost but posts are ordered by post title)",
+		  " 'before'            showing before archive list (HTML or normal text)",
+		  " 'after'             showing after archive list (HTML or normal text)",
+		  " 'show_post_count'   true|false like may(10)",
+		  " 'post_type'         post|custom_post",
+		  "-->"
+		],
+		"description": "wordpress timeways post list showing by this function"
+	},
+
+/**
+*				TEMplaTe
+*/
+
+	"template wordpress name define ": {
+		"prefix": "w@templateName",
+		"body": [
+		"<?php",
+		"/**",
+		"* Template Name: $Name",
+		"*",
+		"* @package $WordPress",
+		"* @subpackage $Twenty_Fourteen",
+		"* @since $Twenty Fourteen 1.0",
+		"*/",
+		""
+		],
+		"description": "template wordpress name define "
+	},
+
+	"wordpress all template part slider|sidebar": {
+		"prefix": "w@getTemplatePart",
+		"body": [
+		  "<?php get_template_part('template-parts/$first', '$second' );?>"
+		],
+		"description": "wordpress all template part slider|sidebar"
+	},
+
+/**
+*				SIdeBAr
+*/
+
+	"default sidebar of wordpress": {
+		"prefix": "w@getSidebar",
+		"body": [
+		"<?php get_sidebar('') ;?>",
+		"<!--",
+		" is_active_sidebar( 'gift_home' ) ) :",
+		"-->"
+		],
+		"description": "default sidebar of wordpress"
+	},
+
+/**
+*				WidgET
+*/
+	"wordpress widget using": {
+		"prefix": "w@getWidget",
+		"body": [
+		"<?php dynamic_sidebar( 'head_widget' ); ?>"
+		],
+		"description": "wordpress widget using"
+	},
+
+
+/**
+*				FOOtER
+*/
+	
+	"wp footer last portion": {
+		"prefix": "w@footer",
+		"body": [
+		"<?php wp_footer(); ?>",
+		"</body>",
+		"</html>"
+		],
+		"description": "wp footer last portion"
+	},
+
+	"get_footer function": {
+		"prefix": "w@getFooter",
+		"body": [
+		"<?php get_footer(); ?>"
+		],
+		"description": "get_header function"
+	},
+
+/**										   **
+*										    *
+*										    *
+*     		Wordpress Plugins	 		    *
+*										    *
+*										    *
+**										   **/
+
+	"wordpress plugin information": {
+		"prefix": "wpInit",
+		"body": [
+		  "<?php",
+		  "",
+		  "/*",
+		  "* Plugin Name: Testing plugin",
+		  "* Plugin URI: https://google.com/",
+		  "* Description: Just another testing site. Simple but multiple.",
+		  "* Author: Ismail hosen alif",
+		  "* Author URI: https://google.com/",
+		  "* Text Domain: google-com",
+		  "* Domain Path: /languages/",
+		  "* Version: 5.1.4",
+		  "*/ ",
+		  "",
+		  "define('PLUGIN_DIR_PATH', plugin_dir_path(__FILE__));",
+          "define(\"PLUGINS_URL\" , plugins_url());",
+		  "if ( ! defined( 'ABSPATH' ) ) exit;"
+		],
+		"description": "wordpress plugin information"
+	},
+
+	"Plugin core path": {
+		"prefix": "wpPath",
+		"body": [
+		  "<?php echo plugins_url();?>/$Plugin_folder_name/",
+		],
+		"description": "Plugins core path"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     		WooCommerce THemiNg	 		    *
+*										    *
+*										    *
+**										   **/
+
+	"woocommerce plugin sidebar": {
+		"prefix": "wooGetSidebar",
+		"body": [
+		"<?php",
+		"/**",
+		" * Hook: woocommerce_sidebar.",
+		" *",
+		" * @hooked woocommerce_get_sidebar - 10",
+		" */",
+		"do_action( 'woocommerce_sidebar' );",
+		"?>"
+		],
+		"description": "woocommerce plugin sidebar"
+	},
+
+	"woocommerce get breadcrumb": {
+		"prefix": "wooGetBreadcrumb",
+		"body": [
+		"<?php woocommerce_breadcrumb();?>"
+		],
+		"description": "woocommerce get breadcrumb"
+	},
+
+
+/**										   **
+*										    *
+*										    *
+*     				React app	 		    *
+*										    *
+*										    *
+**										   **/
+
+	"Webpack syntax aplier": {
+		"prefix": "web",
+		"body": [
+		"webpack"
+		],
+		"description": "Webpack syntax aplier"
+	},
+	
+	"Webpack index file prepare": {
+		"prefix": "wpkIndex",
+		"body": [
+		"<script src=\"./dist/bundle.js\"></script>"
+		],
+		"description": "Webpack index file prepare"
+	},
+
+/**										   **
+*										    *
+*										    *
+*     	React configure in chrome		    *
+*										    *
+*										    *
+**										   **/
+
+	"Html syntax init for chrome extension": {
+		"prefix": "HtmlInit:Chrome:webpack",
+		"body": [
+		"<!DOCTYPE html>",
+		"<html lang=\"en\">",
+		"  <head>",
+		"    <meta charset=\"utf-8\">",
+		"    <title>My extension</title>",
+		"  </head>",
+		"  <body>",
+		"    <div id=\"root\"></div>",
+		"  <script src=\"popup.js\"></script></body>",
+		"</html>"
+		],
+		"description": "Html syntax init for chrome extension"
+	}
+
+}

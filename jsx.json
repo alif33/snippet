@@ -1,0 +1,198 @@
+{
+
+/**										   **
+*										    *
+*										    *
+*     		   	  REACT JS          		*
+*										    *
+*										    *
+**										   **/
+
+        
+    "React JSx unordered list tag": {
+        "prefix": "ul:li",
+        "body": [
+            "<ul>",
+            "  <li></li>",
+            "  <li></li>",
+            "</ul>",
+        ],
+        "description": "React JS unordered list tag"
+    },
+
+    "React JSx unordered list tag with anchor tag": {
+        "prefix": "ul:li:a",
+        "body": [
+            "<ul>",
+            "  <li><a href=\" \"></a></li>",
+            "  <li><a href=\" \"></a></li>",
+            "</ul>",
+        ],
+        "description": "React JS unordered list tag"
+    },
+
+    "React JSx div tag": {
+        "prefix": "div",
+        "body": [
+            "<div></div>",
+        ],
+        "description": "React JSx div tag"
+    },
+
+    "React JSx paragraph tag": {
+        "prefix": "p",
+        "body": [
+            "<p></p>"
+        ],
+        "description": "React JS paragraph tag"
+    },
+
+    "React JSx h1 tag": {
+            "prefix": "h1",
+            "body": [
+            "<h1></h1>"
+            ],
+            "description": "React JSx h1 tag"
+    },
+
+    "React JSx h2 tag": {
+            "prefix": "h2",
+            "body": [
+            "<h2></h2>"
+            ],
+            "description": "React JSx h2 tag"
+    },
+
+    "React JSx h3 tag": {
+            "prefix": "h3",
+            "body": [
+            "<h3></h3>"
+            ],
+            "description": "React JSx h3 tag"
+    },
+    "React JSx h4 tag": {
+            "prefix": "h4",
+            "body": [
+            "<h4></h4>"
+            ],
+            "description": "React JSx h4 tag"
+    },
+    "React JSx h5 tag": {
+            "prefix": "h5",
+            "body": [
+            "<h5></h5>"
+            ],
+            "description": "React JSx h5 tag"
+    },
+
+    "React JSx h6 tag": {
+            "prefix": "h6",
+            "body": [
+            "<h6></h6>"
+            ],
+            "description": "React JSx h6 tag"
+    },
+
+
+
+
+
+
+
+
+
+/**										   **
+*										    *
+*										    *
+*     		   	REACT NATIVE          		*
+*										    *
+*										    *
+**										   **/
+
+
+    "React native core components View": {
+        "prefix": "View",
+        "body": [
+        "<View> </View>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core components Text": {
+        "prefix": "Text",
+        "body": [
+        "<Text> </Text>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core components Image by URI": {
+        "prefix": "Image:uri",
+        "body": [
+        "<Image resizeMode= \"contain\" source={{uri: \" \"}}/>"
+        ],
+        "description": "React native core components"
+    },
+    "React native core components Image from local": {
+        "prefix": "Image:require",
+        "body": [
+        "<Image resizeMode= \"contain\" source={require=('./')}/>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core components ScrollView": {
+        "prefix": "ScrollView",
+        "body": [
+        "<ScrollView> </ScrollView>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core components TextInput": {
+        "prefix": "TextInput",
+        "body": [
+        "<TextInput> </TextInput>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core component TouchableOpacity": {
+        "prefix": "TouchableOpacity",
+        "body": [
+        "<TouchableOpacity> </TouchableOpacity>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core component FlatList": {
+        "prefix": "FlatList",
+        "body": [
+        "<FlatList/>"
+        ],
+        "description": "React native core components"
+    },
+
+    "React native core component SafeAreaView": {
+        "prefix": "SafeAreaView",
+        "body": [
+        "<SafeAreaView> </SafeAreaView>"
+        ],
+        "description": "React native core component SafeAreaView"
+    },
+
+    "React native if condition": {
+		"prefix": "if",
+		"body": [
+		  "{",
+		  "    $condition==true?",
+		  "    < />",
+		  "    :condition==ture?",
+		  "    < />",
+		  "    :< />",
+		  "  }"
+		],
+		"description": "React native if condition"
+	}
+            
+}

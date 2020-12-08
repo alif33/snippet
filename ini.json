@@ -1,0 +1,303 @@
+{	
+
+	"Practice Is the best teacher": {
+		"prefix": "ToUtoriaLs",
+		"body": [
+		  "HTML",
+		  "CSS",
+		  "BOOTSRAP",
+		  "JQUERY",
+		  "JS",
+		  "PHP"
+		],
+		"description": "Practice Is the best teacher"
+	},
+
+
+/**                             *
+*                               *
+*	   JAVASCriPt TouTORials    *
+*                               *
+*                               *
+*                               */
+
+
+	"JAVASCRIPT ToUTORIALS": {
+		"prefix": "JAVASCRIPT",
+		"body": [
+			"[+JS]JAVASCRIPT",
+			" ",
+		  ],
+		"description": "eVeryThing is OK..."
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+	//wordpress all description
+	// "Email creations": {
+	// 	"prefix": ".g",
+	// 	"body": [
+	// 	  "@gmail.com,"
+	// 	],
+	// 	"description": "valid email creations"
+	//   },
+	"wprdpress all post Member Variables of WP_Post": {
+		"prefix": "w@post",
+		"body": [
+		  "WP_Post",
+		  "(The WP_Post class is used to contain post objects stored by ",
+		  "the database and is returned by functions such as get_post.)",
+		  "",
+		  "             $$post->|get_post()",
+		  "",
+		  "Member Variables of WP_Post",
+		  "",
+		  "Member",
+		  "ID",
+		  "post_author(numeric string)",
+		  "post_name",
+		  "post_type",
+		  "post_title",
+		  "post_date",
+		  "post_date_gmt",
+		  "post_content",
+		  "post_excerpt",
+		  "post_status",
+		  "comment_status",
+		  "ping_status",
+		  "post_password",
+		  "post_parent",
+		  "post_modified",
+		  "post_modified_gmt",
+		  "comment_count(numeric string)",
+		  "menu_order(numeric string. Defaults to 0)"
+		],
+		"description": "wprdpress all post Member Variables of WP_Post"
+	},
+	//remove unnessary css file by (purgecss)
+	"PurgeCSS is a tool to remove unused CSS": {
+		"prefix": "uncss",
+		"body": [
+		  "npm i -g purgecss",
+		  "purgecss --css style.css --content *.html --out result"
+		],
+		"description": "PurgeCSS is a tool to remove unused CSS"
+	},
+	
+	"When you install Sass on the command line, you'll be able to run the sass executable to compile .sass and .scss files to .css files": {
+	"prefix": "sass",
+	"body": [
+		"npm install -g sass",
+		"sass --watch input.scss css/output.css"
+	],
+	"description": "When you install Sass on the command line, you'll be able to run the sass executable to compile .sass and .scss files to .css files"
+	},
+
+	"css all animation properties included here": {
+	"prefix": "css_animation",
+	"body": [
+		"animation: name duration timing-function delay iteration-count direction fill-mode play-state;",
+		"animation-delay: time|initial|inherit;",
+		"animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;",
+		"animation-duration: time|initial|inherit;",
+		"animation-fill-mode: none|forwards|backwards|both|initial|inherit;",
+		"animation-iteration-count: number|infinite|initial|inherit;",
+		"animation-name: keyframename|none|initial|inherit;",
+		"animation-play-state: paused|running|initial|inherit;",
+		"animation-timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;",
+		""
+	],
+	"description": "css all animation properties included here"
+	},
+
+	"css all background properties included here": {
+	"prefix": "css_background",
+	"body": [
+		"background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;",
+		"background-attachment: scroll|fixed|local|initial|inherit;",
+		"background-attachment: scroll|fixed|local|initial|inherit;",
+		"background-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|saturation|color|luminosity;",
+		"background-clip: border-box|padding-box|content-box|initial|inherit;",
+		"background-color: color|transparent|initial|inherit;",
+		"background-image: url|none|initial|inherit;",
+		"background-origin: padding-box|border-box|content-box|initial|inherit;",
+		"background-position: value|left top|left center|left bottom|right top|right center|right bottom|center top|center center|center bottom|x% y%|initial|inherit;",
+		"background-repeat: repeat|repeat-x|repeat-y|no-repeat|initial|inherit;",
+		"background-size: auto|length|cover|contain|initial|inherit;"
+	],
+	"description": "css all background properties included here"
+	},
+	  
+	"css alignment properties here included": {
+	"prefix": "css_align",
+	"body": [
+		"align-content: stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;",
+		"align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit;",
+		"align-self: auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;",
+		"all: initial|inherit|unset;"
+	],
+	"description": "css alignment properties here included"
+	},
+
+	"css grid details (http://grid.malven.co/)": {
+	"prefix": "css_grid",
+	"body": [
+		"for details (http://grid.malven.co/)",
+		"======(for container/parents)======",
+		"css_grid_display",
+		"display: grid;",
+		"display: inline-grid;",
+		"display: subgrid;",
+		"",
+		"",
+		"",
+		"css_grid_template",
+		"",
+		"grid-template-columns: 12px 12px 12px;",
+		"grid-template-rows: 12px 12px 12px;",
+		"",
+		"grid-template-columns: repeat(3, 12px);",
+		"grid-template-rows: repeat(3, auto);",
+		"",
+		"grid-template-columns: 8px auto 8px;",
+		"grid-template-rows: 8px auto 12px;",
+		"",
+		"grid-template-columns: 22% 22% auto;",
+		"grid-template-rows: 22% auto 22%;",
+		"",
+		"",
+		"css_grid_gap",
+		"",
+		"grid-row-gap: 1px;",
+		"grid-column-gap: 9px;",
+		"grid-gap: 1px 9px;",
+		"grid-gap: 6px;",
+		"",
+		"",
+		"",
+		"css_justify_items",
+		"",
+		"justify-items: start;",
+		"justify-items: end;",
+		"justify-items: center;",
+		"justify-items: stretch;",
+		"",
+		"",
+		"css_align_items",
+		"",
+		"align-items: start;",
+		"align-items: end;",
+		"align-items: center;",
+		"align-items: stretch;",
+		"",
+		"",
+		"css_justify_content",
+		"",
+		"justify-content: start;",
+		"justify-content: end;",
+		"justify-content: center;",
+		"justify-content: stretch;",
+		"justify-content: space-around;",
+		"justify-content: space-between;",
+		"justify-content: space-evenly;",
+		"",
+		"",
+		"css_align_content",
+		"",
+		"align-content: start;",
+		"align-content: end;",
+		"align-content: center;",
+		"align-content: stretch;",
+		"align-content: space-around;",
+		"align-content: space-between;",
+		"align-content: space-evenly;",
+		"",
+		"",
+		"",
+		"css_grid_auto_flow",
+		"",
+		"grid-auto-flow: row;",
+		"grid-auto-flow: column;",
+		"grid-auto-flow: dense;",
+		"",
+		"",
+		"",
+		"======(for children/child)======",
+		"",
+		"",
+		"",
+		"css_grid_column",
+		"",
+		"",
+		"grid-column-start: 1;",
+		"grid-column-end: 3;",
+		"",
+		"grid-column-start: span 3;",
+		"",
+		"grid-column-start: 2;",
+		"grid-column-end: 4;",
+		"",
+		"grid-column: 2 / 3",
+		"",
+		"grid-column: 2 / span 2",
+		"",
+		"",
+		"",
+		"css_grid_row",
+		"",
+		"",
+		"grid-row-start: 1;",
+		"grid-row-end: 3;",
+		"",
+		"grid-row-start: span 3;",
+		"",
+		"grid-row-start: 2;",
+		"grid-row-end: 4;",
+		"",
+		"grid-row: 1 / 3;",
+		"",
+		"grid-row: 1 / span 3;",
+		"",
+		"",
+		"css_(grid-row + grid-column)",
+		"",
+		"grid-row: 1 / span 2;",
+		"grid-column: 1 / span 2;",
+		"",
+		"grid-row: 2 / span 2;",
+		"grid-column: 2 / span 2;",
+		"",
+		"",
+		"",
+		"css_justify_self",
+		"",
+		"",
+		"justify-self: start;",
+		"justify-self: end;",
+		"justify-self: center;",
+		"justify-self: stretch;",
+		"",
+		"",
+		"",
+		"",
+		"css_align_self",
+		"",
+		"",
+		"align-self: start;",
+		"align-self: end;",
+		"align-self: center;",
+		"align-self: stretch;"
+	],
+	"description": "css grid details (http://grid.malven.co/)"
+	}
+
+}
